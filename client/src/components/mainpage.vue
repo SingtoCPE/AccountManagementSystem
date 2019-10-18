@@ -132,9 +132,9 @@
         </v-hover>
       </v-col>
 
-      <v-col class="pa-2 ml-1">
+      <v-col class="pa-2 ml-1 mb-8">
         <v-hover v-slot:default="{ hover }">
-          <v-card :elevation="hover ? 12 : 2" height="600" width="auto"></v-card>
+          <v-card :elevation="hover ? 12 : 2" height="550" width="auto"></v-card>
         </v-hover>
       </v-col>
     </v-col>
