@@ -37,6 +37,10 @@ export const store = new Vuex.Store({
       } else {
         alert(data.resTextUserFailed);
       }
+    },
+    clearToken() {
+      window.location.href = "http://localhost:8080";
+      Vue.localStorage.remove("AuthToken");
     }
   }
 });

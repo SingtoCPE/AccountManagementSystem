@@ -1,9 +1,9 @@
 <template>
   <div id="footerApp">
-    <v-footer color="blue-grey lighten-2" app>
+    <v-footer color="rgba(19,84,122,.5), rgba(128,208,199,.8)" app>
       <v-spacer class="white--text text-center">
-        &copy; 2017 - {{ new Date().getFullYear() }} —
-        <strong>The Dollarsign.co.Ltd</strong>
+        Copyright &copy; 2017 - {{ new Date().getFullYear() }} —
+        <strong>The Dollarsign.Co.Ltd</strong>
       </v-spacer>
     </v-footer>
   </div>

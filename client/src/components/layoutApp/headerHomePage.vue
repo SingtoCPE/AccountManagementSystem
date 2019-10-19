@@ -21,11 +21,18 @@
       <v-btn icon>
         <v-icon>mdi-settings-outline</v-icon>
       </v-btn>
+
+      <v-btn color="pink accent-3" @click="logout">Logout</v-btn>
     </v-app-bar>
   </div>
 </template>
 <script>
 export default {
-  name: "headerHomepage"
+  name: "headerHomepage",
+  methods: {
+    logout() {
+      this.$store.dispatch("clearToken");
+    }
+  }
 };
 </script>

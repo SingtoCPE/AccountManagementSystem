@@ -10,16 +10,13 @@ Vue.use(Router);
 export default new Router({
   routes: [
     { path: "/", name: "login", component: loginPage },
-    { path: "/mainpage", name: "mainpage", component: mainpage },
     { path: "/overview", name: "overview", component: overview },
-    { path: "/selling", name: "selling", component: selling }
-    // {
-    //   path: "/mainpage",
-    //   name: "loged",
-    //   component: mainPage,
-    //   meta: { requiresAuth: true }
-    // },
-    // { path: "/add", name: "add", component: addEmployee },
-    // { path: "/register", name: "register", component: adminRegister }
+    { path: "/selling", name: "selling", component: selling },
+    {
+      path: "/mainpage",
+      name: "loged",
+      component: mainpage,
+      meta: { requiresAuth: true }
+    }
   ]
 });
