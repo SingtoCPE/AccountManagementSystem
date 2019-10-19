@@ -1,8 +1,8 @@
 import Vue from "vue";
 import Router from "vue-router";
-import mainpage from "@/components/homePage/mainpage.vue";
-import overview from "@/components/homePage/overview.vue";
-import selling from "@/components/homePage/selling.vue";
+import mainPage from "@/components/homePage/mainPage.vue";
+import overviewPage from "@/components/pageByMenu/overviewPage.vue";
+import sellingPage from "@/components/pageByMenu/sellingPage.vue";
 import loginPage from "@/components/loginPage/loginPage.vue";
 
 Vue.use(Router);
@@ -10,12 +10,12 @@ Vue.use(Router);
 export default new Router({
   routes: [
     { path: "/", name: "login", component: loginPage },
-    { path: "/overview", name: "overview", component: overview },
-    { path: "/selling", name: "selling", component: selling },
+    { path: "/overview", name: "overview", component: overviewPage },
+    { path: "/selling", name: "selling", component: sellingPage },
     {
       path: "/mainpage",
       name: "loged",
-      component: mainpage,
+      component: mainPage,
       meta: { requiresAuth: true }
     }
   ]

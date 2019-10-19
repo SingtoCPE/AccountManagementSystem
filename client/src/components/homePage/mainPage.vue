@@ -1,5 +1,5 @@
 <template>
-  <div class="mainpage">
+  <div class="mainPage">
     <v-col class="ma-5">
       <header-home-page />
     </v-col>
@@ -22,7 +22,7 @@ import pageChangeByMenu from "@/components/layoutApp/pageChangeByMenu";
 import headerHomePage from "@/components/layoutApp/headerHomePage";
 
 export default {
-  name: "mainpage",
+  name: "mainPage",
 
   components: {
     menuBar,
