@@ -1,16 +1,18 @@
 <template>
   <v-app>
     <router-view></router-view>
-    <v-footer color="blue-grey lighten-2" app>
-      <v-spacer class="white--text text-center">&copy; 2019</v-spacer>
-    </v-footer>
+    <footer-app />
   </v-app>
 </template>
 
 <script>
-import { store }  from './store/store'
+import { store } from "./store/store";
+import footerApp from "@/components/layoutApp/footerApp.vue";
 export default {
   name: "App",
-  store
+  store,
+  components: {
+    footerApp
+  }
 };
 </script>
