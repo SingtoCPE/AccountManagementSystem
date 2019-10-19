@@ -30,7 +30,7 @@ export const store = new Vuex.Store({
       });
       auth.setToken(data.token);
       if (data.token) {
-        window.location.href = "http://localhost:8080/#/mainpage";
+        window.location.href = "http://localhost:8080/#/homePage/mainPage";
         alert(data.resTextSuccess + " Welcome " + data.userFormDB.name);
       } else if (data.resTextPassFailed) {
         alert(data.resTextPassFailed);

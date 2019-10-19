@@ -1,5 +1,5 @@
 <template>
-  <div class="mainPage">
+  <div class="homePage">
     <v-col class="ma-5">
       <header-home-page />
     </v-col>
@@ -10,7 +10,7 @@
       </v-col>
 
       <v-col class="pa-2 ml-1 mb-8">
-        <page-change-by-menu />
+        <router-view></router-view>
       </v-col>
     </v-col>
   </div>
@@ -18,15 +18,13 @@
 
 <script>
 import menuBar from "@/components/layoutApp/menuBar.vue";
-import pageChangeByMenu from "@/components/layoutApp/pageChangeByMenu";
 import headerHomePage from "@/components/layoutApp/headerHomePage";
 
 export default {
-  name: "mainPage",
+  name: "homePage",
 
   components: {
     menuBar,
-    pageChangeByMenu,
     headerHomePage
   },
   methods: {}

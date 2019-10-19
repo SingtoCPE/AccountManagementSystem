@@ -19,7 +19,7 @@
       <v-btn icon>EN</v-btn>
 
       <v-btn icon>
-        <v-menu offset-y>
+        <v-menu offset-y open-on-hover>
           <template v-slot:activator="{ on }">
             <v-btn icon @click="menuBar" v-on="on">
               <v-icon>mdi-settings-outline</v-icon>
