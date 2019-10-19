@@ -19,19 +19,43 @@
       <v-btn icon>EN</v-btn>
 
       <v-btn icon>
-        <v-icon>mdi-settings-outline</v-icon>
-      </v-btn>
+        <v-menu offset-y>
+          <template v-slot:activator="{ on }">
+            <v-btn icon @click="menuBar" v-on="on">
+              <v-icon>mdi-settings-outline</v-icon>
+            </v-btn>
+          </template>
+          <v-list color="grey lighten-1" width="200">
+            <v-list-item link>
+              <v-list-item-title>
+                <v-icon class="mr-2">mdi-account</v-icon>Account
+              </v-list-item-title>
+            </v-list-item>
 
-      <v-btn color="pink accent-3" @click="logout">Logout</v-btn>
+            <v-list-item>
+              <v-list-item-title>
+                <v-btn block @click="logout" color="pink accent-3">LOGOUT</v-btn>
+              </v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </v-btn>
     </v-app-bar>
   </div>
 </template>
 <script>
 export default {
   name: "headerHomepage",
+  data: () => ({
+    clickMenuBar: []
+  }),
   methods: {
     logout() {
       this.$store.dispatch("clearToken");
+    },
+    menuBar() {
+      this.clickMenuBar = [];
+      this.clickMenuBar.push("click");
     }
   }
 };
