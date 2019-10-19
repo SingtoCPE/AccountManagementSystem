@@ -5,7 +5,20 @@ import loginPage from "@/components/loginPage/loginPage.vue";
 import homePage from "@/components/homePage/homePage.vue";
 import mainPage from "@/components/pageByMenu/mainPage.vue";
 import overviewPage from "@/components/pageByMenu/overviewPage.vue";
-import sellingPage from "@/components/pageByMenu/sellingPage/sellingPage.vue";
+
+import quotationsPage from "@/components/pageByMenu/sellingPage/quotationsPage.vue";
+import billingNotePage from "@/components/pageByMenu/sellingPage/billingNotePage.vue";
+import receiptPage from "@/components/pageByMenu/sellingPage/receiptPage.vue";
+
+import ordersPage from "@/components/pageByMenu/buyingPage/ordersPage.vue";
+import productReceiptPage from "@/components/pageByMenu/buyingPage/productReceiptPage.vue";
+
+import expensePage from "@/components/pageByMenu/expensePage/expensePage.vue";
+import withholdingPage from "@/components/pageByMenu/expensePage/withholdingPage.vue";
+
+import paySalaryPage from "@/components/pageByMenu/salaryPage/paySalaryPage.vue";
+import employeeListPage from "@/components/pageByMenu/salaryPage/employeeListPage.vue";
+
 import reportPage from "@/components/pageByMenu/reportPage.vue";
 import productPage from "@/components/pageByMenu/productPage.vue";
 import addressBookPage from "@/components/pageByMenu/addressBookPage.vue";
@@ -32,8 +45,40 @@ export default new Router({
           component: overviewPage
         },
         {
-          path: "sellingPage",
-          component: sellingPage
+          path: "sellingPage/quotationsPage",
+          component: quotationsPage
+        },
+        {
+          path: "sellingPage/billingNotePage",
+          component: billingNotePage
+        },
+        {
+          path: "sellingPage/receiptPage",
+          component: receiptPage
+        },
+        {
+          path: "buyingPage/ordersPage",
+          component: ordersPage
+        },
+        {
+          path: "buyingPage/productReceiptPage",
+          component: productReceiptPage
+        },
+        {
+          path: "expensePage/expensePage",
+          component: expensePage
+        },
+        {
+          path: "expensePage/withholdingPage",
+          component: withholdingPage
+        },
+        {
+          path: "salaryPage/paySalaryPage",
+          component: paySalaryPage
+        },
+        {
+          path: "salaryPage/employeeListPage",
+          component: employeeListPage
         },
         {
           path: "reportPage",

@@ -25,7 +25,12 @@
               <v-list-item-title class="pl-3">Selling</v-list-item-title>
             </template>
 
-            <v-list-item v-for="(sell, i) in selling" :key="i" @click="sell.i" link>
+            <v-list-item
+              v-for="(sell, i) in selling"
+              :key="i"
+              @click="clickChildSell(sell[0])"
+              link
+            >
               <v-icon class="pl-3">mdi-square-small</v-icon>
               <v-list-item-title class="pl-8" v-text="sell[0]"></v-list-item-title>
             </v-list-item>
@@ -39,7 +44,7 @@
               <v-list-item-title class="pl-3">Buying</v-list-item-title>
             </template>
 
-            <v-list-item v-for="(buy, i) in buying" :key="i" link>
+            <v-list-item v-for="(buy, i) in buying" :key="i" @click="clickChildBuy(buy[0])" link>
               <v-icon class="pl-3">mdi-square-small</v-icon>
               <v-list-item-title class="pl-8" v-text="buy[0]"></v-list-item-title>
             </v-list-item>
@@ -53,7 +58,12 @@
               <v-list-item-title class="pl-3">Expenses</v-list-item-title>
             </template>
 
-            <v-list-item v-for="(expense, i) in expenses" :key="i" link>
+            <v-list-item
+              v-for="(expense, i) in expenses"
+              :key="i"
+              @click="clickChildExpense(expense[0])"
+              link
+            >
               <v-icon class="pl-3">mdi-square-small</v-icon>
               <v-list-item-title class="pl-8" v-text="expense[0]"></v-list-item-title>
             </v-list-item>
@@ -67,7 +77,12 @@
               <v-list-item-title class="pl-3">Salary</v-list-item-title>
             </template>
 
-            <v-list-item v-for="(amount, i) in salary" :key="i" link>
+            <v-list-item
+              v-for="(amount, i) in salary"
+              :key="i"
+              @click="clickChildSalary(amount[0])"
+              link
+            >
               <v-icon class="pl-3">mdi-square-small</v-icon>
               <v-list-item-title class="pl-8" v-text="amount[0]"></v-list-item-title>
             </v-list-item>
@@ -135,8 +150,49 @@ export default {
     clickSetting() {
       window.location.href = "http://localhost:8080/#/homePage/settingPage";
     },
-    Quotations() {
-      window.location.href = "http://localhost:8080/#/homePage/settingPage";
+    clickChildSell(nameSelling) {
+      if (nameSelling == "Quotations") {
+        window.location.href =
+          "http://localhost:8080/#/homePage/sellingPage/quotationsPage";
+      }
+      if (nameSelling == "Billing note") {
+        window.location.href =
+          "http://localhost:8080/#/homePage/sellingPage/billingNotePage";
+      }
+      if (nameSelling == "Receipt") {
+        window.location.href =
+          "http://localhost:8080/#/homePage/sellingPage/receiptPage";
+      }
+    },
+    clickChildBuy(nameBuying) {
+      if (nameBuying == "Orders") {
+        window.location.href =
+          "http://localhost:8080/#/homePage/buyingPage/ordersPage";
+      }
+      if (nameBuying == "Product receipt") {
+        window.location.href =
+          "http://localhost:8080/#/homePage/buyingPage/productReceiptPage";
+      }
+    },
+    clickChildExpense(nameExpense) {
+      if (nameExpense == "Expenses") {
+        window.location.href =
+          "http://localhost:8080/#/homePage/expensePage/expensePage";
+      }
+      if (nameExpense == "Withholding") {
+        window.location.href =
+          "http://localhost:8080/#/homePage/expensePage/withholdingPage";
+      }
+    },
+    clickChildSalary(nameSalary) {
+      if (nameSalary == "Pay salary") {
+        window.location.href =
+          "http://localhost:8080/#/homePage/salaryPage/paySalaryPage";
+      }
+      if (nameSalary == "Employee list") {
+        window.location.href =
+          "http://localhost:8080/#/homePage/salaryPage/employeeListPage";
+      }
     }
   }
 };
