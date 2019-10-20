@@ -150,6 +150,7 @@ export default {
     clickSetting() {
       window.location.href = "http://localhost:8080/#/homePage/settingPage";
     },
+
     clickChildSell(nameSelling) {
       if (nameSelling == "Quotations") {
         window.location.href =

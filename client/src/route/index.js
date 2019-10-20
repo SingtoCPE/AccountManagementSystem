@@ -1,100 +1,90 @@
 import Vue from "vue";
 import Router from "vue-router";
-import loginPage from "@/components/loginPage/loginPage.vue";
-
-import homePage from "@/components/homePage/homePage.vue";
-import mainPage from "@/components/pageByMenu/mainPage.vue";
-import overviewPage from "@/components/pageByMenu/overviewPage.vue";
-
-import quotationsPage from "@/components/pageByMenu/sellingPage/quotationsPage.vue";
-import billingNotePage from "@/components/pageByMenu/sellingPage/billingNotePage.vue";
-import receiptPage from "@/components/pageByMenu/sellingPage/receiptPage.vue";
-
-import ordersPage from "@/components/pageByMenu/buyingPage/ordersPage.vue";
-import productReceiptPage from "@/components/pageByMenu/buyingPage/productReceiptPage.vue";
-
-import expensePage from "@/components/pageByMenu/expensePage/expensePage.vue";
-import withholdingPage from "@/components/pageByMenu/expensePage/withholdingPage.vue";
-
-import paySalaryPage from "@/components/pageByMenu/salaryPage/paySalaryPage.vue";
-import employeeListPage from "@/components/pageByMenu/salaryPage/employeeListPage.vue";
-
-import reportPage from "@/components/pageByMenu/reportPage.vue";
-import productPage from "@/components/pageByMenu/productPage.vue";
-import addressBookPage from "@/components/pageByMenu/addressBookPage.vue";
-import settingPage from "@/components/pageByMenu/settingPage.vue";
 
 Vue.use(Router);
 
 export default new Router({
   routes: [
-    { path: "/", name: "login", component: loginPage },
+    {
+      path: "/",
+      name: "login",
+      component: () => import("@/components/loginPage/loginPage.vue")
+    },
 
     {
       path: "/homePage/",
       name: "loged",
-      component: homePage,
+      component: () => import("@/components/homePage/homePage.vue"),
       meta: { requiresAuth: true },
       children: [
         {
           path: "mainPage",
-          component: mainPage
+          component: () => import("@/components/pageByMenu/mainPage.vue")
         },
         {
           path: "overviewPage",
-          component: overviewPage
+          component: () => import("@/components/pageByMenu/overviewPage.vue")
         },
         {
           path: "sellingPage/quotationsPage",
-          component: quotationsPage
+          component: () =>
+            import("@/components/pageByMenu/sellingPage/quotationsPage.vue")
         },
         {
           path: "sellingPage/billingNotePage",
-          component: billingNotePage
+          component: () =>
+            import("@/components/pageByMenu/sellingPage/billingNotePage.vue")
         },
         {
           path: "sellingPage/receiptPage",
-          component: receiptPage
+          component: () =>
+            import("@/components/pageByMenu/sellingPage/receiptPage.vue")
         },
         {
           path: "buyingPage/ordersPage",
-          component: ordersPage
+          component: () =>
+            import("@/components/pageByMenu/buyingPage/ordersPage.vue")
         },
         {
           path: "buyingPage/productReceiptPage",
-          component: productReceiptPage
+          component: () =>
+            import("@/components/pageByMenu/buyingPage/productReceiptPage.vue")
         },
         {
           path: "expensePage/expensePage",
-          component: expensePage
+          component: () =>
+            import("@/components/pageByMenu/expensePage/expensePage.vue")
         },
         {
           path: "expensePage/withholdingPage",
-          component: withholdingPage
+          component: () =>
+            import("@/components/pageByMenu/expensePage/withholdingPage.vue")
         },
         {
           path: "salaryPage/paySalaryPage",
-          component: paySalaryPage
+          component: () =>
+            import("@/components/pageByMenu/salaryPage/paySalaryPage.vue")
         },
         {
           path: "salaryPage/employeeListPage",
-          component: employeeListPage
+          component: () =>
+            import("@/components/pageByMenu/salaryPage/employeeListPage.vue")
         },
         {
           path: "reportPage",
-          component: reportPage
+          component: () => import("@/components/pageByMenu/reportPage.vue")
         },
         {
           path: "productPage",
-          component: productPage
+          component: () => import("@/components/pageByMenu/productPage.vue")
         },
         {
           path: "addressBookPage",
-          component: addressBookPage
+          component: () => import("@/components/pageByMenu/addressBookPage.vue")
         },
         {
           path: "settingPage",
-          component: settingPage
+          component: () => import("@/components/pageByMenu/settingPage.vue")
         }
       ]
     }
