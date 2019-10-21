@@ -1,5 +1,5 @@
 <template>
-  <div id="overviewPage">
+  <div id="dashboardPage">
     <v-card
       color="grey lighten-5"
       v-for="j in justify"
@@ -24,7 +24,7 @@
 </template>
 <script>
 export default {
-  name: "overviewPage",
+  name: "dashboardPage",
   data: () => ({
     justify: ["start", "end"],
     headerTopBlock: [

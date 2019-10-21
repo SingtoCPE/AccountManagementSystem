@@ -7,14 +7,14 @@
             <v-col class="brown lighten-5 pa-3">
               <v-icon>mdi-home</v-icon>
             </v-col>
-            <v-list-item-title class="pl-3">Main</v-list-item-title>
+            <v-list-item-title class="pl-3">Home</v-list-item-title>
           </v-list-item>
 
           <v-list-item link @click="clickOverview">
             <v-col class="brown lighten-5 pa-3">
               <v-icon>mdi-star</v-icon>
             </v-col>
-            <v-list-item-title class="pl-3">Overview</v-list-item-title>
+            <v-list-item-title class="pl-3">Dashboard</v-list-item-title>
           </v-list-item>
 
           <v-list-group>
@@ -25,14 +25,9 @@
               <v-list-item-title class="pl-3">Sell</v-list-item-title>
             </template>
 
-            <v-list-item
-              v-for="(sell, i) in selling"
-              :key="i"
-              @click="clickChildSell(sell[0])"
-              link
-            >
+            <v-list-item v-for="(item, i) in sell" :key="i" @click="clickChildSell(item[0])" link>
               <v-icon class="pl-3">mdi-square-small</v-icon>
-              <v-list-item-title class="pl-8" v-text="sell[0]"></v-list-item-title>
+              <v-list-item-title class="pl-8" v-text="item[0]"></v-list-item-title>
             </v-list-item>
           </v-list-group>
 
@@ -44,9 +39,9 @@
               <v-list-item-title class="pl-3">Buy</v-list-item-title>
             </template>
 
-            <v-list-item v-for="(buy, i) in buying" :key="i" @click="clickChildBuy(buy[0])" link>
+            <v-list-item v-for="(item, i) in buy" :key="i" @click="clickChildBuy(item[0])" link>
               <v-icon class="pl-3">mdi-square-small</v-icon>
-              <v-list-item-title class="pl-8" v-text="buy[0]"></v-list-item-title>
+              <v-list-item-title class="pl-8" v-text="item[0]"></v-list-item-title>
             </v-list-item>
           </v-list-group>
 
@@ -55,17 +50,17 @@
               <v-col class="brown lighten-5 pa-3">
                 <v-icon>mdi-cash-refund</v-icon>
               </v-col>
-              <v-list-item-title class="pl-3">Expenses</v-list-item-title>
+              <v-list-item-title class="pl-3">Expense</v-list-item-title>
             </template>
 
             <v-list-item
-              v-for="(expense, i) in expenses"
+              v-for="(item, i) in expense"
               :key="i"
-              @click="clickChildExpense(expense[0])"
+              @click="clickChildExpense(item[0])"
               link
             >
               <v-icon class="pl-3">mdi-square-small</v-icon>
-              <v-list-item-title class="pl-8" v-text="expense[0]"></v-list-item-title>
+              <v-list-item-title class="pl-8" v-text="item[0]"></v-list-item-title>
             </v-list-item>
           </v-list-group>
 
@@ -78,13 +73,13 @@
             </template>
 
             <v-list-item
-              v-for="(amount, i) in salary"
+              v-for="(item, i) in payroll"
               :key="i"
-              @click="clickChildSalary(amount[0])"
+              @click="clickChildSalary(item[0])"
               link
             >
               <v-icon class="pl-3">mdi-square-small</v-icon>
-              <v-list-item-title class="pl-8" v-text="amount[0]"></v-list-item-title>
+              <v-list-item-title class="pl-8" v-text="item[0]"></v-list-item-title>
             </v-list-item>
           </v-list-group>
 
@@ -102,7 +97,7 @@
             <v-list-item-title class="pl-3">Product</v-list-item-title>
           </v-list-item>
 
-          <v-list-item link @click="clickAddressBook">
+          <v-list-item link @click="clickContacts">
             <v-col class="brown lighten-5 pa-3">
               <v-icon>mdi-account-circle</v-icon>
             </v-col>
@@ -125,10 +120,10 @@
 export default {
   name: "menuBar",
   data: () => ({
-    selling: [["Price Quotation"], ["Billing Note"], ["Invoice/Receipt"]],
-    buying: [["Purchase Order"], ["Receiving Inventory"]],
-    expenses: [["Expenses"], ["Withholding Tax"]],
-    salary: [["Run Payroll"], ["Employee List"]],
+    sell: [["Price Quotation"], ["Billing Note"], ["Invoice/Receipt"]],
+    buy: [["Purchase Order"], ["Receiving Inventory"]],
+    expense: [["Expense"], ["Withholding Tax"]],
+    payroll: [["Run Payroll"], ["Employee List"]],
     justify: ["start", "end"]
   }),
   methods: {
@@ -136,7 +131,7 @@ export default {
       window.location.href = "http://localhost:8080/#/homePage/mainPage";
     },
     clickOverview() {
-      window.location.href = "http://localhost:8080/#/homePage/overviewPage";
+      window.location.href = "http://localhost:8080/#/homePage/dashboardPage";
     },
     clickReport() {
       window.location.href = "http://localhost:8080/#/homePage/reportPage";
@@ -144,55 +139,55 @@ export default {
     clickProduct() {
       window.location.href = "http://localhost:8080/#/homePage/productPage";
     },
-    clickAddressBook() {
-      window.location.href = "http://localhost:8080/#/homePage/addressBookPage";
+    clickContacts() {
+      window.location.href = "http://localhost:8080/#/homePage/contactsPage";
     },
     clickSetting() {
       window.location.href = "http://localhost:8080/#/homePage/settingPage";
     },
 
-    clickChildSell(nameSelling) {
-      if (nameSelling == "Quotations") {
+    clickChildSell(nameSell) {
+      if (nameSell == "Price Quotation") {
         window.location.href =
-          "http://localhost:8080/#/homePage/sellingPage/quotationsPage";
+          "http://localhost:8080/#/homePage/sellPage/priceQuotationPage";
       }
-      if (nameSelling == "Billing note") {
+      if (nameSell == "Billing Note") {
         window.location.href =
-          "http://localhost:8080/#/homePage/sellingPage/billingNotePage";
+          "http://localhost:8080/#/homePage/sellPage/billingNotePage";
       }
-      if (nameSelling == "Receipt") {
+      if (nameSell == "Invoice/Receipt") {
         window.location.href =
-          "http://localhost:8080/#/homePage/sellingPage/receiptPage";
+          "http://localhost:8080/#/homePage/sellPage/receiptPage";
       }
     },
-    clickChildBuy(nameBuying) {
-      if (nameBuying == "Orders") {
+    clickChildBuy(nameBuy) {
+      if (nameBuy == "Purchase Order") {
         window.location.href =
-          "http://localhost:8080/#/homePage/buyingPage/ordersPage";
+          "http://localhost:8080/#/homePage/buyPage/purchaseOrderPage";
       }
-      if (nameBuying == "Product receipt") {
+      if (nameBuy == "Receiving Inventory") {
         window.location.href =
-          "http://localhost:8080/#/homePage/buyingPage/productReceiptPage";
+          "http://localhost:8080/#/homePage/buyPage/receivingInventoryPage";
       }
     },
     clickChildExpense(nameExpense) {
-      if (nameExpense == "Expenses") {
+      if (nameExpense == "Expense") {
         window.location.href =
           "http://localhost:8080/#/homePage/expensePage/expensePage";
       }
-      if (nameExpense == "Withholding") {
+      if (nameExpense == "Withholding Tax") {
         window.location.href =
           "http://localhost:8080/#/homePage/expensePage/withholdingPage";
       }
     },
-    clickChildSalary(nameSalary) {
-      if (nameSalary == "Pay salary") {
+    clickChildSalary(namePayroll) {
+      if (namePayroll == "Run Payroll") {
         window.location.href =
-          "http://localhost:8080/#/homePage/salaryPage/paySalaryPage";
+          "http://localhost:8080/#/homePage/payrollPage/runPayrollPage";
       }
-      if (nameSalary == "Employee list") {
+      if (namePayroll == "Employee List") {
         window.location.href =
-          "http://localhost:8080/#/homePage/salaryPage/employeeListPage";
+          "http://localhost:8080/#/homePage/payrollPage/employeeListPage";
       }
     }
   }

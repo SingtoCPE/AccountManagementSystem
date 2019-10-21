@@ -22,33 +22,33 @@ export default new Router({
           component: () => import("@/components/pageByMenu/mainPage.vue")
         },
         {
-          path: "overviewPage",
-          component: () => import("@/components/pageByMenu/overviewPage.vue")
+          path: "dashboardPage",
+          component: () => import("@/components/pageByMenu/dashboardPage.vue")
         },
         {
-          path: "sellingPage/quotationsPage",
+          path: "sellPage/priceQuotationPage",
           component: () =>
-            import("@/components/pageByMenu/sellingPage/quotationsPage.vue")
+            import("@/components/pageByMenu/sellPage/priceQuotationPage.vue")
         },
         {
-          path: "sellingPage/billingNotePage",
+          path: "sellPage/billingNotePage",
           component: () =>
-            import("@/components/pageByMenu/sellingPage/billingNotePage.vue")
+            import("@/components/pageByMenu/sellPage/billingNotePage.vue")
         },
         {
-          path: "sellingPage/receiptPage",
+          path: "sellPage/receiptPage",
           component: () =>
-            import("@/components/pageByMenu/sellingPage/receiptPage.vue")
+            import("@/components/pageByMenu/sellPage/receiptPage.vue")
         },
         {
-          path: "buyingPage/ordersPage",
+          path: "buyPage/purchaseOrderPage",
           component: () =>
-            import("@/components/pageByMenu/buyingPage/ordersPage.vue")
+            import("@/components/pageByMenu/buyPage/purchaseOrderPage.vue")
         },
         {
-          path: "buyingPage/productReceiptPage",
+          path: "buyPage/receivingInventoryPage",
           component: () =>
-            import("@/components/pageByMenu/buyingPage/productReceiptPage.vue")
+            import("@/components/pageByMenu/buyPage/receivingInventoryPage.vue")
         },
         {
           path: "expensePage/expensePage",
@@ -61,14 +61,14 @@ export default new Router({
             import("@/components/pageByMenu/expensePage/withholdingPage.vue")
         },
         {
-          path: "salaryPage/paySalaryPage",
+          path: "payrollPage/runPayrollPage",
           component: () =>
-            import("@/components/pageByMenu/salaryPage/paySalaryPage.vue")
+            import("@/components/pageByMenu/payrollPage/runPayrollPage.vue")
         },
         {
-          path: "salaryPage/employeeListPage",
+          path: "payRollPage/employeeListPage",
           component: () =>
-            import("@/components/pageByMenu/salaryPage/employeeListPage.vue")
+            import("@/components/pageByMenu/payrollPage/employeeListPage.vue")
         },
         {
           path: "reportPage",
@@ -79,8 +79,8 @@ export default new Router({
           component: () => import("@/components/pageByMenu/productPage.vue")
         },
         {
-          path: "addressBookPage",
-          component: () => import("@/components/pageByMenu/addressBookPage.vue")
+          path: "contactsPage",
+          component: () => import("@/components/pageByMenu/contactsPage.vue")
         },
         {
           path: "settingPage",

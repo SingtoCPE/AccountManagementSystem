@@ -1,5 +1,5 @@
 <template>
-  <div id="ordersPage">
+  <div id="purchaseOrderPage">
     <v-hover v-slot:default="{ hover }">
       <v-card
         :elevation="hover ? 12 : 2"
@@ -14,6 +14,6 @@
 </template>
 <script>
 export default {
-  name: "ordersPage"
+  name: "purchaseOrderPage"
 };
 </script>
