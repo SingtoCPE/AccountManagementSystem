@@ -12,12 +12,14 @@
       <v-card
         v-for="(item,index) in headerTopBlock"
         :key="index"
-        class="pa-2 mr-4 mb-4 text-center"
+        class="mr-4 mb-4 text-start"
         width="600"
         tile
       >
-        <v-icon>{{j == 'start'? item[0]:headerBottomBlock[0][0]}}</v-icon>
-        {{j == 'start'? item[1]:headerBottomBlock[0][1]}}
+        <v-col class="teal lighten-3">
+          <v-icon class="pl-1">{{j == 'start'? item[0]:headerBottomBlock[index][0]}}</v-icon>
+          {{j == 'start'? item[1]:headerBottomBlock[index][1]}}
+        </v-col>
       </v-card>
     </v-card>
   </div>
@@ -28,10 +30,13 @@ export default {
   data: () => ({
     justify: ["start", "end"],
     headerTopBlock: [
-      ["mdi-mouse", "INCOME SUMMARY"],
-      ["mdi-mouse", "OUTSTANDING INVOICES"]
+      ["mdi-chart-timeline-variant", "INCOME SUMMARY"],
+      ["mdi-clipboard-text-outline", "OUTSTANDING INVOICES"]
     ],
-    headerBottomBlock: [["mdi-mouse", "bottom1"], ["mdi-mouse", "bottom2"]]
+    headerBottomBlock: [
+      ["mdi-chart-timeline-variant", "EXPENSE SUMMARY"],
+      ["mdi-clipboard-text-outline", "OUTSTANDING PAYMENTS"]
+    ]
   })
 };
 </script>
