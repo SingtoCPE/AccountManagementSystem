@@ -5,7 +5,7 @@
         <v-row justify="center">
           <v-col cols="12" sm="5" class="mb-2 align-center">
             <h1 class="text-center mb-2">What are you doing today?</h1>
-            <v-progress-linear color="teal" rounded value="100"></v-progress-linear>
+            <v-progress-linear color="teal lighten-3" rounded value="100"></v-progress-linear>
           </v-col>
         </v-row>
 
