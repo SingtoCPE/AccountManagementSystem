@@ -23,7 +23,7 @@
 
         <v-col v-if="index==0" :class="`d-flex justify-start`">
           <v-card outlined class="ml-2" width="100" height="50">
-            <v-select color="pink" :items="years" label="years" solo></v-select>
+            <v-select :items="years" label="years" solo></v-select>
           </v-card>
           <v-card
             outlined
@@ -48,7 +48,7 @@
           </v-card>
         </v-col>
 
-        <v-card>
+        <v-card outlined color="white" class="pa-2">
           <v-card
             v-if="index==0"
             class="mx-auto text-center mt-5"
@@ -74,12 +74,6 @@
             <v-card-text>
               <div class="display-1 font-weight-thin">Sales Last 24h</div>
             </v-card-text>
-
-            <v-divider></v-divider>
-
-            <v-card-actions class="justify-center">
-              <v-btn block text>Go to Report</v-btn>
-            </v-card-actions>
           </v-card>
         </v-card>
 
@@ -107,7 +101,7 @@ export default {
   name: "dashboardPage",
   data: () => ({
     justify: ["start", "end"],
-    value: [423, 446, 675, 510, 590, 610, 760],
+    value: [300, 446, 675, 510, 590, 610, 760],
     years: ["30 day", "60 day", "90 day", "180 day", "1 year"],
     texts: [["Collected", "Total"], ["Expense Total", "Income Total"]],
     headerTopBlock: [
