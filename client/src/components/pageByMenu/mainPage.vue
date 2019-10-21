@@ -8,6 +8,7 @@
             <v-progress-linear color="teal" rounded value="100"></v-progress-linear>
           </v-col>
         </v-row>
+
         <v-card v-for="j in justify" :key="j" :class="`d-flex justify-${j}`" height="215" flat tile>
           <v-card
             v-for="(item,index) in itemInTopCard"
@@ -18,19 +19,22 @@
             outlined
             tile
           >
-            <v-icon class="mt-3" size="80px">{{ (j=='start'? item[0]:itemInBottomCard[index][0]) }}</v-icon>
+            <v-icon
+              class="mt-4 mb-2"
+              size="80px"
+            >{{ (j=='start'? item[0]:itemInBottomCard[index][0]) }}</v-icon>
             <h3>
               <v-icon>mdi-plus</v-icon>
               {{ (j=='start'? item[1]:itemInBottomCard[index][1]) }}
             </h3>
             <v-hover v-slot:default="{ hover }">
               <v-card
-                class="text-center mt-3 mx-auto"
+                class="text-center mt-5 mx-auto"
                 :elevation="hover ? 3 : 0"
                 width="150"
                 @click="crossCheckAll(j,index)"
                 outlined
-              >Cross-check all {{(item[1]+' : '+index)}}</v-card>
+              >View all {{ (j=='start'? 'top ':'bottom ')+index }}</v-card>
             </v-hover>
           </v-card>
         </v-card>
@@ -44,16 +48,16 @@ export default {
   data: () => ({
     justify: ["start", "end"],
     itemInTopCard: [
-      ["mdi-cash-usd", "Quotation"],
-      ["mdi-note", "Billing Note"],
-      ["mdi-newspaper", "Receipt"],
-      ["mdi-note-text", "Orders"]
+      ["mdi-cash-usd", "Create Price Quotation"],
+      ["mdi-note", "Create Billing Note"],
+      ["mdi-newspaper", "Create Invoice/Receipt"],
+      ["mdi-note-text", "Create Purchase Order"]
     ],
     itemInBottomCard: [
-      ["mdi-cash-refund", "Expense"],
-      ["mdi-file-percent-outline", "Withholding"],
-      ["mdi-account", "Add Customer"],
-      ["mdi-package-variant-closed", "Add Product"]
+      ["mdi-cash-refund", "Add Expenses"],
+      ["mdi-file-percent-outline", "Create Withholding Tax"],
+      ["mdi-account", "Add Contacts"],
+      ["mdi-package-variant-closed", "Add Products"]
     ]
   }),
   methods: {

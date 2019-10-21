@@ -22,7 +22,7 @@
               <v-col class="brown lighten-5 pa-3">
                 <v-icon>mdi-currency-usd</v-icon>
               </v-col>
-              <v-list-item-title class="pl-3">Selling</v-list-item-title>
+              <v-list-item-title class="pl-3">Sell</v-list-item-title>
             </template>
 
             <v-list-item
@@ -41,7 +41,7 @@
               <v-col class="brown lighten-5 pa-3">
                 <v-icon>mdi-cart</v-icon>
               </v-col>
-              <v-list-item-title class="pl-3">Buying</v-list-item-title>
+              <v-list-item-title class="pl-3">Buy</v-list-item-title>
             </template>
 
             <v-list-item v-for="(buy, i) in buying" :key="i" @click="clickChildBuy(buy[0])" link>
@@ -74,7 +74,7 @@
               <v-col class="brown lighten-5 pa-3">
                 <v-icon>mdi-cash-100</v-icon>
               </v-col>
-              <v-list-item-title class="pl-3">Salary</v-list-item-title>
+              <v-list-item-title class="pl-3">Payroll</v-list-item-title>
             </template>
 
             <v-list-item
@@ -106,7 +106,7 @@
             <v-col class="brown lighten-5 pa-3">
               <v-icon>mdi-account-circle</v-icon>
             </v-col>
-            <v-list-item-title class="pl-3">Address book</v-list-item-title>
+            <v-list-item-title class="pl-3">Contacts</v-list-item-title>
           </v-list-item>
 
           <v-list-item link @click="clickSetting">
@@ -125,10 +125,10 @@
 export default {
   name: "menuBar",
   data: () => ({
-    selling: [["Quotations"], ["Billing note"], ["Receipt"]],
-    buying: [["Orders"], ["Product receipt"]],
-    expenses: [["Expenses"], ["Withholding"]],
-    salary: [["Pay salary"], ["Employee list"]],
+    selling: [["Price Quotation"], ["Billing Note"], ["Invoice/Receipt"]],
+    buying: [["Purchase Order"], ["Receiving Inventory"]],
+    expenses: [["Expenses"], ["Withholding Tax"]],
+    salary: [["Run Payroll"], ["Employee List"]],
     justify: ["start", "end"]
   }),
   methods: {
