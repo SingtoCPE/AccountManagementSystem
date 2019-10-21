@@ -48,6 +48,41 @@
           </v-card>
         </v-col>
 
+        <v-card>
+          <v-card
+            v-if="index==0"
+            class="mx-auto text-center mt-5"
+            color="green"
+            dark
+            max-width="600"
+          >
+            <v-card-text>
+              <v-sheet color="rgba(0, 0, 0, .12)">
+                <v-sparkline
+                  :value="value"
+                  color="rgba(255, 255, 255, .7)"
+                  height="100"
+                  padding="24"
+                  stroke-linecap="round"
+                  smooth
+                >
+                  <template v-slot:label="item">${{ item.value }}</template>
+                </v-sparkline>
+              </v-sheet>
+            </v-card-text>
+
+            <v-card-text>
+              <div class="display-1 font-weight-thin">Sales Last 24h</div>
+            </v-card-text>
+
+            <v-divider></v-divider>
+
+            <v-card-actions class="justify-center">
+              <v-btn block text>Go to Report</v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-card>
+
         <v-col class="text-center" v-if="index==1">
           <v-card outlined color="white" v-if="j=='start'">
             <v-icon size="200px">mdi-cash-usd-outline</v-icon>
@@ -72,6 +107,7 @@ export default {
   name: "dashboardPage",
   data: () => ({
     justify: ["start", "end"],
+    value: [423, 446, 675, 510, 590, 610, 760],
     years: ["30 day", "60 day", "90 day", "180 day", "1 year"],
     texts: [["Collected", "Total"], ["Expense Total", "Income Total"]],
     headerTopBlock: [
