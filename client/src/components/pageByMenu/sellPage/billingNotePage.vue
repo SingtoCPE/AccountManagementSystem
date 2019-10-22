@@ -4,7 +4,7 @@
       <v-card :elevation="hover ? 12 : 2" height="550" width="auto">
         <v-col class="teal lighten-3">
           <h4>
-            <v-icon class="mr-2">mdi-cash-usd-outline</v-icon>QUOTATION OVERVIEW
+            <v-icon class="mr-2">mdi-note</v-icon>BILLING NOTES OVERVIEW
           </h4>
         </v-col>
         <v-card outlined class="d-flex justify-space-between">
@@ -50,9 +50,10 @@
                   </th>
                   <th class="text-left" style="width:120px;">Name</th>
                   <th class="text-left" style="width:120px;">Date</th>
-                  <th class="text-left" style="width:120px;">QT #</th>
+                  <th class="text-left" style="width:130px;">BL #</th>
                   <th class="text-left" style="width:400px;">Client Name</th>
                   <th class="text-left" style="width:120px;">Total</th>
+                  <th class="text-left" style="width:120px;">Duo Date</th>
                   <th class="text-left" style="width:120px;">Status</th>
                   <th class="text-left" style="width:120px;">Edit/Print</th>
                 </tr>
@@ -69,7 +70,7 @@
                       prepend-inner-icon="mdi-magnify"
                       flat
                       hide-details
-                      label="QT #"
+                      label="BL #"
                       solo-inverted
                     ></v-text-field>
                   </td>
@@ -83,12 +84,13 @@
                     ></v-text-field>
                   </td>
                   <td>c</td>
+                  <td>d</td>
                   <td>
                     <v-card outlined class="ml-2" width="100" height="50">
                       <v-select :items="allList" label="All" solo></v-select>
                     </v-card>
                   </td>
-                  <td>d</td>
+                  <td>e</td>
                 </tr>
               </tbody>
             </template>
@@ -116,6 +118,10 @@
 </template>
 <script>
 export default {
-  name: "billingNotePage"
+  name: "billingNotePage",
+  data: () => ({
+    allList: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+    page: 1
+  })
 };
 </script>

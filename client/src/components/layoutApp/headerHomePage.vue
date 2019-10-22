@@ -19,14 +19,14 @@
       <v-btn icon>EN</v-btn>
 
       <v-btn icon>
-        <v-menu offset-y open-on-hover>
+        <v-menu offset-y>
           <template v-slot:activator="{ on }">
             <v-btn icon @click="menuBar" v-on="on">
               <v-icon>mdi-settings-outline</v-icon>
             </v-btn>
           </template>
           <v-list color="grey lighten-1" width="200">
-            <v-list-item link>
+            <v-list-item @click="gotoAccount" link>
               <v-list-item-title>
                 <v-icon class="mr-2">mdi-account</v-icon>Account
               </v-list-item-title>
@@ -56,6 +56,9 @@ export default {
     menuBar() {
       this.clickMenuBar = [];
       this.clickMenuBar.push("click");
+    },
+    gotoAccount() {
+      window.location.href = "http://localhost:8080/#/homePage/accountPage";
     }
   }
 };

@@ -50,7 +50,7 @@
                   </th>
                   <th class="text-left" style="width:120px;">Name</th>
                   <th class="text-left" style="width:120px;">Date</th>
-                  <th class="text-left" style="width:120px;">QT #</th>
+                  <th class="text-left" style="width:130px;">QT #</th>
                   <th class="text-left" style="width:400px;">Client Name</th>
                   <th class="text-left" style="width:120px;">Total</th>
                   <th class="text-left" style="width:120px;">Status</th>

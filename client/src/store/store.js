@@ -11,15 +11,19 @@ const endpointLogin = "http://localhost:3033/employee/login";
 
 export const store = new Vuex.Store({
   state: {
-    data: []
+    data: [],
+    user: ""
   },
   mutations: {
     setData(state, data) {
       state.data = data;
+    },
+    setUserName(state, userName) {
+      state.userName = userName;
     }
   },
   actions: {
-    async accountLogin(_, { user, password }) {
+    async accountLogin({ commit }, { user, password }) {
       const { data } = await Axios({
         method: "post",
         url: endpointLogin,
@@ -32,6 +36,9 @@ export const store = new Vuex.Store({
       if (data.token) {
         window.location.href = "http://localhost:8080/#/homePage/mainPage";
         alert(data.resTextSuccess + " Welcome " + data.userFormDB.name);
+        // eslint-disable-next-line no-console
+        console.log(data.userFormDB.name);
+        commit("setUserName", data.userFormDB.name);
       } else if (data.resTextPassFailed) {
         alert(data.resTextPassFailed);
       } else {

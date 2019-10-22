@@ -27,19 +27,13 @@ import { mapState } from "vuex";
 
 export default {
   name: "homePage",
-  data() {
-    return {
-      account: {
-        user: ""
-      }
-    };
-  },
+  data: () => ({}),
   components: {
     menuBar,
     headerHomePage
   },
   computed: mapState({
-    data: state => state.data
+    UserName: state => state.UserName
   })
 };
 </script>

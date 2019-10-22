@@ -85,6 +85,10 @@ export default new Router({
         {
           path: "settingPage",
           component: () => import("@/components/pageByMenu/settingPage.vue")
+        },
+        {
+          path: "accountPage",
+          component: () => import("@/components/pageByMenu/accountPage.vue")
         }
       ]
     }
