@@ -33,14 +33,17 @@
                 tile
               >
                 <h2 class="mt-4 mb-2">{{ (j=='start'? item[0]:itemInBottomCard[index][0]) }}</h2>
-                <h4>{{ (j=='start'? item[1]:itemInBottomCard[index][1]) }}</h4>
+                <v-card outlined color="white" height="80">
+                  <h4>{{ (j=='start'? item[1]:itemInBottomCard[index][1]) }}</h4>
+                </v-card>
                 <v-hover v-slot:default="{ hover }">
                   <v-card
-                    class="text-center mt-12"
+                    class="text-center mt-3"
                     :elevation="hover ? 3 : 0"
                     width="150"
                     @click="crossCheckAll(j,index)"
                     outlined
+                    color="teal lighten-3"
                   >VIEW REPORT {{ (j=='start'? 'top ':'b ')+index }}</v-card>
                 </v-hover>
               </v-card>
@@ -84,6 +87,40 @@ export default {
         "Display the payment collection details of each invoice."
       ]
     ]
-  })
+  }),
+  methods: {
+    clickChild(j, index) {
+      if (j == "start" && index == 0) {
+        // eslint-disable-next-line no-console
+        console.log("Top 0");
+      }
+      if (j == "start" && index == 1) {
+        // eslint-disable-next-line no-console
+        console.log("Top 1");
+      }
+      if (j == "start" && index == 2) {
+        // eslint-disable-next-line no-console
+        console.log("Top 2");
+      }
+
+      if (j == "end" && index == 0) {
+        // eslint-disable-next-line no-console
+        console.log("bottom 0");
+      }
+      if (j == "end" && index == 1) {
+        // eslint-disable-next-line no-console
+        console.log("bottom 1");
+      }
+      if (j == "end" && index == 2) {
+        // eslint-disable-next-line no-console
+        console.log("bottom 2");
+      }
+    },
+    crossCheckAll(j, index) {
+      // eslint-disable-next-line no-console
+      console.log(j, index);
+      //if(j==start && index = 0){ Do somethings }
+    }
+  }
 };
 </script>

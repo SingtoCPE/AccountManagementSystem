@@ -34,6 +34,7 @@
                 width="150"
                 @click="crossCheckAll(j,index)"
                 outlined
+                color="teal lighten-3"
               >View all {{ (j=='start'? 'top ':'bottom ')+index }}</v-card>
             </v-hover>
           </v-card>
