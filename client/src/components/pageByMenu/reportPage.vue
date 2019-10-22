@@ -1,7 +1,7 @@
 <template>
   <div id="reportPage">
     <v-hover v-slot:default="{ hover }">
-      <v-card :elevation="hover ? 12 : 2" height="620" width="auto">
+      <v-card :elevation="hover ? 12 : 2" height="auto" width="auto">
         <v-col class="teal lighten-3">
           <h4>
             <v-icon class="mr-2">mdi-clipboard-pulse</v-icon>REPORTS
@@ -24,24 +24,23 @@
               width="1155"
             >
               <v-card
-                v-for="(item,index) in itemInTopCard"
+                v-for="(item,index) in itemInTopSell"
                 :key="index"
                 class="pa-4 mx-3"
                 width="370"
-                @click="clickChild(j,index)"
                 outlined
                 tile
               >
-                <h2 class="mt-4 mb-2">{{ (j=='start'? item[0]:itemInBottomCard[index][0]) }}</h2>
+                <h2 class="mt-4 mb-2">{{ (j=='start'? item[0]:itemInBottomSell[index][0]) }}</h2>
                 <v-card outlined color="white" height="80">
-                  <h4>{{ (j=='start'? item[1]:itemInBottomCard[index][1]) }}</h4>
+                  <h4>{{ (j=='start'? item[1]:itemInBottomSell[index][1]) }}</h4>
                 </v-card>
                 <v-hover v-slot:default="{ hover }">
                   <v-card
                     class="text-center mt-3"
                     :elevation="hover ? 3 : 0"
                     width="150"
-                    @click="crossCheckAll(j,index)"
+                    @click="crossCheckAllSell(j,index)"
                     outlined
                     color="teal lighten-3"
                   >VIEW REPORT {{ (j=='start'? 'top ':'b ')+index }}</v-card>
@@ -49,8 +48,54 @@
               </v-card>
             </v-card>
           </v-tab-item>
-          <v-tab-item>b</v-tab-item>
-          <v-tab-item>c</v-tab-item>
+
+          <v-tab-item>
+            <v-card outlined color="white" class="d-flex justify-start mt-5">
+              <v-card
+                outlined
+                v-for="(item,index) in itemInBuy"
+                :key="index"
+                height="215"
+                class="pa-4 mx-3"
+                width="370"
+              >
+                <h2 class="mt-4 mb-2">{{ (index=='0'? item[0]:itemInBuy[index][0]) }}</h2>
+                <v-card outlined color="white" height="80">
+                  <h4>{{ (index=='1'? item[1]:itemInBuy[index][1]) }}</h4>
+                </v-card>
+                <v-hover v-slot:default="{ hover }">
+                  <v-card
+                    class="text-center mt-3"
+                    :elevation="hover ? 3 : 0"
+                    width="150"
+                    @click="crossCheckAllBuy(index)"
+                    outlined
+                    color="teal lighten-3"
+                  >VIEW REPORT {{index}}</v-card>
+                </v-hover>
+              </v-card>
+            </v-card>
+          </v-tab-item>
+          <v-tab-item>
+            <v-card outlined color="white" class="d-flex justify-start mt-5">
+              <v-card outlined height="215" class="pa-4 mx-3" width="370">
+                <h2 class="mt-4 mb-2">Products</h2>
+                <v-card outlined color="white" height="80">
+                  <h4>View Sales revenue by product or service.</h4>
+                </v-card>
+                <v-hover v-slot:default="{ hover }">
+                  <v-card
+                    class="text-center mt-3"
+                    :elevation="hover ? 3 : 0"
+                    width="150"
+                    @click="crossCheckAllProduct"
+                    outlined
+                    color="teal lighten-3"
+                  >VIEW REPORT</v-card>
+                </v-hover>
+              </v-card>
+            </v-card>
+          </v-tab-item>
         </v-tabs>
       </v-card>
     </v-hover>
@@ -62,7 +107,7 @@ export default {
   data: () => ({
     justify: ["start", "end"],
     align: ["start", "end"],
-    itemInTopCard: [
+    itemInTopSell: [
       [
         "Sales",
         "Gives you a summary and helps you keep track of your sales for the month."
@@ -73,7 +118,7 @@ export default {
       ],
       ["Price Quotation", "Summarizes and help you keep track of your."]
     ],
-    itemInBottomCard: [
+    itemInBottomSell: [
       [
         "Billing Note",
         "Summarizes and help you keep track of your billing Note/Invoice."
@@ -86,40 +131,32 @@ export default {
         "Receipt Collection",
         "Display the payment collection details of each invoice."
       ]
+    ],
+    itemInBuy: [
+      [
+        "Vendor",
+        "Helps you understand who your most important suppliers are and how much you are purchasing from them."
+      ],
+      [
+        "Cash Payments",
+        "Summarize cash payments from purchase order and receiving inventory documents.."
+      ]
     ]
   }),
   methods: {
-    clickChild(j, index) {
-      if (j == "start" && index == 0) {
-        // eslint-disable-next-line no-console
-        console.log("Top 0");
-      }
-      if (j == "start" && index == 1) {
-        // eslint-disable-next-line no-console
-        console.log("Top 1");
-      }
-      if (j == "start" && index == 2) {
-        // eslint-disable-next-line no-console
-        console.log("Top 2");
-      }
-
-      if (j == "end" && index == 0) {
-        // eslint-disable-next-line no-console
-        console.log("bottom 0");
-      }
-      if (j == "end" && index == 1) {
-        // eslint-disable-next-line no-console
-        console.log("bottom 1");
-      }
-      if (j == "end" && index == 2) {
-        // eslint-disable-next-line no-console
-        console.log("bottom 2");
-      }
-    },
-    crossCheckAll(j, index) {
+    crossCheckAllSell(j, index) {
       // eslint-disable-next-line no-console
       console.log(j, index);
       //if(j==start && index = 0){ Do somethings }
+    },
+
+    crossCheckAllBuy(index) {
+      // eslint-disable-next-line no-console
+      console.log(index);
+    },
+    crossCheckAllProduct() {
+      // eslint-disable-next-line no-console
+      console.log("product");
     }
   }
 };
