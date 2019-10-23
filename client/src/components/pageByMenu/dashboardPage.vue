@@ -1,20 +1,13 @@
 <template>
   <div id="dashboardPage">
-    <v-card
-      color="grey lighten-5"
-      v-for="j in justify"
-      :key="j"
-      :class="`d-flex justify-${j}`"
-      height="550"
-      flat
-      tile
-    >
+    <v-card v-for="j in justify" :key="j" :class="`d-flex justify-${j}`" height="550" flat tile>
       <v-card
         v-for="(item,index) in headerTopBlock"
         :key="index"
         class="mr-4 mb-4 text-start"
         width="600"
         tile
+        elevation="5"
       >
         <v-col class="teal lighten-3">
           <v-icon class="pl-1">{{j == 'start'? item[0]:headerBottomBlock[index][0]}}</v-icon>
@@ -81,7 +74,12 @@
           <v-card outlined color="white" v-if="j=='start'">
             <v-icon size="200px">mdi-cash-usd-outline</v-icon>
             <h3>This area displays the total amount that your clients owe you.</h3>
-            <v-card width="250" outlined class="mt-10 mx-auto">Create your first billing note</v-card>
+            <v-card
+              color="teal lighten-3"
+              width="250"
+              outlined
+              class="mt-10 mx-auto"
+            >Create your first billing note</v-card>
           </v-card>
         </v-col>
 
@@ -89,7 +87,12 @@
           <v-card outlined color="white" v-if="j!=='start'">
             <v-icon size="200px">mdi-clipboard-text-outline</v-icon>
             <h3>This area displays the total amount that you owe your clients.</h3>
-            <v-card width="250" outlined class="mt-10 mx-auto">Create your first purchase</v-card>
+            <v-card
+              color="teal lighten-3"
+              width="250"
+              outlined
+              class="mt-10 mx-auto"
+            >Create your first purchase</v-card>
           </v-card>
         </v-col>
       </v-card>

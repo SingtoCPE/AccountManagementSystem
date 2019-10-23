@@ -4,7 +4,7 @@
       <v-card :elevation="hover ? 12 : 2" height="550" width="auto" class="px-4 py-3">
         <v-row justify="center">
           <v-col cols="12" sm="5" class="mb-2 align-center">
-            <h1 class="text-center mb-2">What are you doing today?</h1>
+            <h2 class="text-center mb-2">WHAT WOULD YOU LIKE TO DO TODAY?</h2>
             <v-progress-linear color="teal lighten-3" rounded value="100"></v-progress-linear>
           </v-col>
         </v-row>
