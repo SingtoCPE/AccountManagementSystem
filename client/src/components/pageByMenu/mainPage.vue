@@ -21,25 +21,24 @@
           <v-card
             v-for="(item,index) in itemInTopCard"
             :key="index"
-            class="pa-2 text-center mt-2 mx-1"
+            class="text-center mt-2 mx-1"
             width="287"
-            @click="clickChild(j,index)"
             outlined
             tile
           >
-            <v-icon
-              class="mt-4 mb-2"
-              size="80px"
-            >{{ (j=='start'? item[0]:itemInBottomCard[index][0]) }}</v-icon>
-            <h3>
-              <v-icon>mdi-plus</v-icon>
-              {{ (j=='start'? item[1]:itemInBottomCard[index][1]) }}
-            </h3>
-            <v-btn
-              @click="crossCheckAll(j,index)"
-              class="mt-3"
-              color="teal lighten-3"
-            >View all {{ (j=='start'? 'top ':'bottom ')+index }}</v-btn>
+            <v-card class="pa-4 mb-2" outlined color="white" @click="clickChild(j,index)">
+              <v-icon size="80px">{{ (j=='start'? item[0]:itemInBottomCard[index][0]) }}</v-icon>
+              <h3>
+                <v-icon>mdi-plus</v-icon>
+                {{ (j=='start'? item[1]:itemInBottomCard[index][1]) }}
+              </h3>
+            </v-card>
+            <v-card outlined color="white">
+              <v-btn
+                @click="crossCheckAll(j,index)"
+                color="teal lighten-3"
+              >View all {{ (j=='start'? 'top ':'bottom ')+index }}</v-btn>
+            </v-card>
           </v-card>
         </v-card>
       </v-card>

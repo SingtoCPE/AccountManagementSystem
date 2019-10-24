@@ -28,7 +28,7 @@
               outlined
               color="white"
               width="250"
-              class="pt-2 mx-3 d-flex justify-space-around"
+              class="pt-2 ml-3 mr-1 d-flex justify-space-around"
             >
               <v-menu transition="fade-transition">
                 <template v-slot:activator="{ on }">
@@ -45,7 +45,7 @@
                   </v-list-item>
                 </v-list>
               </v-menu>
-              <v-btn width="115">
+              <v-btn color="grey lighten-1" width="115">
                 <v-icon>mdi-plus</v-icon>New
               </v-btn>
             </v-card>
