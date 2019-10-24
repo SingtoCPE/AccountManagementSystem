@@ -10,7 +10,7 @@
         <v-card>
           <v-col class="teal lighten-3">
             <h4>
-              <v-icon class="mr-2">mdi-clipboard-text-outline</v-icon>RECEIVING INVENTORY OVERVIEW
+              <v-icon class="mr-2">mdi-cash-refund</v-icon>EXPENSES OVERVIEW
             </h4>
           </v-col>
           <v-card outlined class="d-flex justify-space-between">

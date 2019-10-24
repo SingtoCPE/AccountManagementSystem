@@ -10,10 +10,10 @@
         <v-card>
           <v-col class="teal lighten-3">
             <h4>
-              <v-icon class="mr-2">mdi-clipboard-text-outline</v-icon>RECEIVING INVENTORY OVERVIEW
+              <v-icon class="mr-2">mdi-file-percent-outline</v-icon>WITHHOLDING TAX OVERVIEW
             </h4>
           </v-col>
-          <v-card height="50" color="white" outlined class="d-flex justify-end mr-2 mt-2">
+          <v-card height="43" color="white" outlined class="d-flex justify-end mr-2 mt-2">
             <v-btn color="grey lighten-1" width="115">
               <v-icon>mdi-plus</v-icon>New
             </v-btn>

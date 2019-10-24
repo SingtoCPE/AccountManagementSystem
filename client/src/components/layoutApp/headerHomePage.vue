@@ -6,7 +6,7 @@
       </template>
 
       <v-toolbar-title>
-        <v-icon>mdi-currency-usd</v-icon>The Dollarsign.co.Ltd
+        <v-icon>mdi-currency-usd</v-icon>The Dollarsign.Co.Ltd
       </v-toolbar-title>
 
       <v-spacer class="pt-2 text-center headline font-weight-light">Home Page</v-spacer>
