@@ -143,7 +143,7 @@ export default {
       window.location.href = "http://localhost:8080/#/homePage/contactsPage";
     },
     clickSetting() {
-      window.location.href = "http://localhost:8080/#/homePage/settingPage";
+      window.location.href = "http://localhost:8080/#/settingPage";
     },
 
     clickChildSell(nameSell) {
