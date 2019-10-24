@@ -74,12 +74,7 @@
           <v-card outlined color="white" v-if="j=='start'">
             <v-icon size="200px">mdi-cash-usd-outline</v-icon>
             <h3>This area displays the total amount that your clients owe you.</h3>
-            <v-card
-              color="teal lighten-3"
-              width="250"
-              outlined
-              class="mt-10 mx-auto"
-            >Create your first billing note</v-card>
+            <v-btn class="mt-10" color="teal lighten-3">Create your first billing note</v-btn>
           </v-card>
         </v-col>
 
@@ -87,12 +82,7 @@
           <v-card outlined color="white" v-if="j!=='start'">
             <v-icon size="200px">mdi-clipboard-text-outline</v-icon>
             <h3>This area displays the total amount that you owe your clients.</h3>
-            <v-card
-              color="teal lighten-3"
-              width="250"
-              outlined
-              class="mt-10 mx-auto"
-            >Create your first purchase</v-card>
+            <v-btn class="mt-10" color="teal lighten-3">Create your first purchase</v-btn>
           </v-card>
         </v-col>
       </v-card>

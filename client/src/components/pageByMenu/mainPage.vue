@@ -9,11 +9,19 @@
           </v-col>
         </v-row>
 
-        <v-card v-for="j in justify" :key="j" :class="`d-flex justify-${j}`" height="215" flat tile>
+        <v-card
+          class="d-flex flex-row justify-center"
+          v-for="j in justify"
+          :key="j"
+          :class="`d-flex justify-${j}`"
+          height="215"
+          flat
+          tile
+        >
           <v-card
             v-for="(item,index) in itemInTopCard"
             :key="index"
-            class="pa-2 mx-1 mb-2 text-center"
+            class="pa-2 text-center mt-2 mx-1"
             width="287"
             @click="clickChild(j,index)"
             outlined
@@ -27,16 +35,11 @@
               <v-icon>mdi-plus</v-icon>
               {{ (j=='start'? item[1]:itemInBottomCard[index][1]) }}
             </h3>
-            <v-hover v-slot:default="{ hover }">
-              <v-card
-                class="text-center mt-5 mx-auto"
-                :elevation="hover ? 3 : 0"
-                width="150"
-                @click="crossCheckAll(j,index)"
-                outlined
-                color="teal lighten-3"
-              >View all {{ (j=='start'? 'top ':'bottom ')+index }}</v-card>
-            </v-hover>
+            <v-btn
+              @click="crossCheckAll(j,index)"
+              class="mt-3"
+              color="teal lighten-3"
+            >View all {{ (j=='start'? 'top ':'bottom ')+index }}</v-btn>
           </v-card>
         </v-card>
       </v-card>

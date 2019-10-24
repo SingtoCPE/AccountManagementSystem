@@ -35,16 +35,10 @@
                 <v-card outlined color="white" height="80">
                   <h4>{{ (j=='start'? item[1]:itemInBottomSell[index][1]) }}</h4>
                 </v-card>
-                <v-hover v-slot:default="{ hover }">
-                  <v-card
-                    class="text-center mt-3"
-                    :elevation="hover ? 3 : 0"
-                    width="150"
-                    @click="crossCheckAllSell(j,index)"
-                    outlined
-                    color="teal lighten-3"
-                  >VIEW REPORT {{ (j=='start'? 'top ':'b ')+index }}</v-card>
-                </v-hover>
+                <v-btn
+                  @click="crossCheckAllSell(j,index)"
+                  color="teal lighten-3"
+                >VIEW REPORT {{ (j=='start'? 'top ':'b ')+index }}</v-btn>
               </v-card>
             </v-card>
           </v-tab-item>
@@ -63,16 +57,7 @@
                 <v-card outlined color="white" height="80">
                   <h4>{{ (index=='1'? item[1]:itemInBuy[index][1]) }}</h4>
                 </v-card>
-                <v-hover v-slot:default="{ hover }">
-                  <v-card
-                    class="text-center mt-3"
-                    :elevation="hover ? 3 : 0"
-                    width="150"
-                    @click="crossCheckAllBuy(index)"
-                    outlined
-                    color="teal lighten-3"
-                  >VIEW REPORT {{index}}</v-card>
-                </v-hover>
+                <v-btn @click="crossCheckAllBuy(index)" color="teal lighten-3">VIEW REPORT {{index}}</v-btn>
               </v-card>
             </v-card>
           </v-tab-item>
@@ -83,16 +68,7 @@
                 <v-card outlined color="white" height="80">
                   <h4>View Sales revenue by product or service.</h4>
                 </v-card>
-                <v-hover v-slot:default="{ hover }">
-                  <v-card
-                    class="text-center mt-3"
-                    :elevation="hover ? 3 : 0"
-                    width="150"
-                    @click="crossCheckAllProduct"
-                    outlined
-                    color="teal lighten-3"
-                  >VIEW REPORT</v-card>
-                </v-hover>
+                <v-btn @click="crossCheckAllProduct" color="teal lighten-3">VIEW REPORT</v-btn>
               </v-card>
             </v-card>
           </v-tab-item>
