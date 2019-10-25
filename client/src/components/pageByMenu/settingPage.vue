@@ -12,7 +12,7 @@
         </v-toolbar-title>
         <v-spacer></v-spacer>
         <v-btn
-          @click="goBack"
+          :to="{ path: '/homePage/mainPage'}"
           height="60px"
           width="auto"
           color="rgba(200,84,100,.5), rgba(128,208,199,.8)"
@@ -28,7 +28,7 @@
           <v-list-item
             v-for="(item,index) in dataCompony"
             :key="`${index}-${item}`"
-            @click="checkChildCompany(index)"
+            :to="item[2]"
             link
           >
             <v-col class="brown lighten-5 pa-3">
@@ -41,7 +41,7 @@
           <v-list-item
             v-for="(item,index) in dataUser"
             :key="`${index}-${item}`"
-            @click="checkChildUser(index)"
+            :to="item[2]"
             link
           >
             <v-col class="brown lighten-5 pa-3">
@@ -64,80 +64,66 @@ export default {
   components: {},
   data: () => ({
     dataCompony: [
-      ["mdi-domain", "Edit Company Profile"],
-      ["mdi-heart-outline", "Edit Logo"],
-      ["mdi-stamper", "Edit Stamp"],
-      ["mdi-counter", "Edit Running Number"],
-      ["mdi-file-document-outline", "Edit Document Title"],
-      ["mdi-file-outline", "Edit Document Template"],
-      ["mdi-plus-circle", "Edit Document Features"],
-      ["mdi-comment-outline", "Edit Default Remark"],
-      ["mdi-email", "Edit Default Email"],
-      ["mdi-dots-horizontal", "Other Settings"],
-      ["mdi-file-document-box-outline", "Download"]
+      [
+        "mdi-domain",
+        "Edit Company Profile",
+        "/homePage/settingPage/companyPage"
+      ],
+      ["mdi-heart-outline", "Edit Logo", "/homePage/settingPage/logoPage"],
+      ["mdi-stamper", "Edit Stamp", "/homePage/settingPage/stampPage"],
+      [
+        "mdi-counter",
+        "Edit Running Number",
+        "/homePage/settingPage/runNumberPage"
+      ],
+      [
+        "mdi-file-document-outline",
+        "Edit Document Title",
+        "/homePage/settingPage/documentTitlePage"
+      ],
+      [
+        "mdi-file-outline",
+        "Edit Document Template",
+        "/homePage/settingPage/documentTemplatePage"
+      ],
+      [
+        "mdi-plus-circle",
+        "Edit Document Features",
+        "/homePage/settingPage/documentFeaturePage"
+      ],
+      [
+        "mdi-comment-outline",
+        "Edit Default Remark",
+        "/homePage/settingPage/defaultRemarkPage"
+      ],
+      [
+        "mdi-email",
+        "Edit Default Email",
+        "/homePage/settingPage/defaultEmailPage"
+      ],
+      [
+        "mdi-dots-horizontal",
+        "Other Settings",
+        "/homePage/settingPage/otherSettingsPage"
+      ],
+      [
+        "mdi-file-document-box-outline",
+        "Download",
+        "/homePage/settingPage/downloadPage"
+      ]
     ],
     dataUser: [
-      ["mdi-fountain-pen-tip", "Edit Electronic Signature"],
-      ["mdi-account-edit-outline", "Edit User"]
+      [
+        "mdi-fountain-pen-tip",
+        "Edit Electronic Signature",
+        "/homePage/settingPage/signeturePage"
+      ],
+      [
+        "mdi-account-edit-outline",
+        "Edit User",
+        "/homePage/settingPage/userPage"
+      ]
     ]
-  }),
-  methods: {
-    goBack() {
-      window.location.href = "http://localhost:8080/#/homePage/mainPage";
-    },
-    checkChildCompany(index) {
-      if (index == 0) {
-        window.location.href =
-          "http://localhost:8080/#/settingPage/companyPage";
-      }
-      if (index == 1) {
-        window.location.href = "http://localhost:8080/#/settingPage/logoPage";
-      }
-      if (index == 2) {
-        window.location.href = "http://localhost:8080/#/settingPage/stampPage";
-      }
-      if (index == 3) {
-        window.location.href =
-          "http://localhost:8080/#/settingPage/runNumberPage";
-      }
-      if (index == 4) {
-        window.location.href =
-          "http://localhost:8080/#/settingPage/documentTitlePage";
-      }
-      if (index == 5) {
-        window.location.href =
-          "http://localhost:8080/#/settingPage/documentTemplatePage";
-      }
-      if (index == 6) {
-        window.location.href =
-          "http://localhost:8080/#/settingPage/documentFeaturePage";
-      }
-      if (index == 7) {
-        window.location.href =
-          "http://localhost:8080/#/settingPage/defaultRemarkPage";
-      }
-      if (index == 8) {
-        window.location.href =
-          "http://localhost:8080/#/settingPage/defaultEmailPage";
-      }
-      if (index == 9) {
-        window.location.href =
-          "http://localhost:8080/#/settingPage/otherSettingsPage";
-      }
-      if (index == 10) {
-        window.location.href =
-          "http://localhost:8080/#/settingPage/downloadPage";
-      }
-    },
-    checkChildUser(index) {
-      if (index == 0) {
-        window.location.href =
-          "http://localhost:8080/#/settingPage/signeturePage";
-      }
-      if (index == 1) {
-        window.location.href = "http://localhost:8080/#/settingPage/userPage";
-      }
-    }
-  }
+  })
 };
 </script>
