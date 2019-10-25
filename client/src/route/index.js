@@ -91,7 +91,7 @@ export default new Router({
     },
 
     {
-      path: "/settingPage/",
+      path: "/homePage/settingPage/",
       name: "setting",
       meta: { requiresAuth: true },
       component: () => import("@/components/pageByMenu/settingPage.vue"),

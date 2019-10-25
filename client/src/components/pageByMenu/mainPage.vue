@@ -31,8 +31,8 @@
                 {{ item[1] }}
               </h3>
             </v-card>
-            <v-card @click="clickViewAll(index)" outlined color="white" class="text-center">
-              <v-btn color="teal lighten-3">View all {{ index }}</v-btn>
+            <v-card flat color="white" class="text-center">
+              <v-btn @click="clickViewAll(index)" color="teal lighten-3">View all {{ index }}</v-btn>
             </v-card>
           </v-card>
         </v-card>

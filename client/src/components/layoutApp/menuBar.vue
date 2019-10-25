@@ -3,14 +3,14 @@
     <v-hover v-slot:default="{ hover }">
       <v-card :elevation="hover ? 12 : 2" class="ma-auto">
         <v-list>
-          <v-list-item link @click="clickMain">
+          <v-list-item :to="{ path: '/homePage/mainPage'}" link>
             <v-col class="brown lighten-5 pa-3">
               <v-icon>mdi-home</v-icon>
             </v-col>
             <v-list-item-title class="pl-3">Home</v-list-item-title>
           </v-list-item>
 
-          <v-list-item link @click="clickOverview">
+          <v-list-item :to="{ path: '/homePage/dashboardPage'}" link>
             <v-col class="brown lighten-5 pa-3">
               <v-icon>mdi-star</v-icon>
             </v-col>
@@ -83,28 +83,28 @@
             </v-list-item>
           </v-list-group>
 
-          <v-list-item link @click="clickReport">
+          <v-list-item :to="{ path: '/homePage/reportPage'}" link>
             <v-col class="brown lighten-5 pa-3">
               <v-icon>mdi-clipboard-pulse</v-icon>
             </v-col>
             <v-list-item-title class="pl-3">Report</v-list-item-title>
           </v-list-item>
 
-          <v-list-item link @click="clickProduct">
+          <v-list-item :to="{ path: '/homePage/productPage'}" link>
             <v-col class="brown lighten-5 pa-3">
               <v-icon>mdi-package-variant-closed</v-icon>
             </v-col>
             <v-list-item-title class="pl-3">Product</v-list-item-title>
           </v-list-item>
 
-          <v-list-item link @click="clickContacts">
+          <v-list-item :to="{ path: '/homePage/contactsPage'}" link>
             <v-col class="brown lighten-5 pa-3">
               <v-icon>mdi-account-circle</v-icon>
             </v-col>
             <v-list-item-title class="pl-3">Contacts</v-list-item-title>
           </v-list-item>
 
-          <v-list-item link @click="clickSetting">
+          <v-list-item :to="{ path: '/homePage/settingPage'}" link>
             <v-col class="brown lighten-5 pa-3">
               <v-icon>mdi-settings</v-icon>
             </v-col>
@@ -127,25 +127,6 @@ export default {
     justify: ["start", "end"]
   }),
   methods: {
-    clickMain() {
-      window.location.href = "http://localhost:8080/#/homePage/mainPage";
-    },
-    clickOverview() {
-      window.location.href = "http://localhost:8080/#/homePage/dashboardPage";
-    },
-    clickReport() {
-      window.location.href = "http://localhost:8080/#/homePage/reportPage";
-    },
-    clickProduct() {
-      window.location.href = "http://localhost:8080/#/homePage/productPage";
-    },
-    clickContacts() {
-      window.location.href = "http://localhost:8080/#/homePage/contactsPage";
-    },
-    clickSetting() {
-      window.location.href = "http://localhost:8080/#/settingPage";
-    },
-
     clickChildSell(nameSell) {
       if (nameSell == "Price Quotation") {
         window.location.href =

@@ -1,91 +1,15 @@
 <template>
   <div id="dashboardPage">
-    <v-card v-for="j in justify" :key="j" :class="`d-flex justify-${j}`" height="550" flat tile>
+    <v-card class="d-flex flex-wrap justify-center" color="transparent" flat tile>
       <v-card
         v-for="(item,index) in headerTopBlock"
         :key="index"
-        class="mr-4 mb-4 text-start"
-        width="600"
+        width="585"
+        height="550"
+        class="mx-2 mb-4"
+        outlined
         tile
-        elevation="5"
-      >
-        <v-col class="teal lighten-3">
-          <v-icon class="pl-1">{{j == 'start'? item[0]:headerBottomBlock[index][0]}}</v-icon>
-          {{j == 'start'? item[1]:headerBottomBlock[index][1]}}
-        </v-col>
-
-        <v-col v-if="index==0" :class="`d-flex justify-start`">
-          <v-card outlined class="ml-2" width="100" height="50">
-            <v-select :items="years" label="years" solo></v-select>
-          </v-card>
-          <v-card
-            outlined
-            color="white"
-            class="mx-3 px-2"
-            :class="`d-flex justify-start`"
-            v-if="j=='start'"
-          >
-            <v-card outlined color="white" height="30">{{texts[index][0]}}</v-card>
-            <v-card outlined color="white" height="30" class="ml-2">{{texts[index][1]}}</v-card>
-          </v-card>
-
-          <v-card
-            outlined
-            color="white"
-            class="mx-3 px-2"
-            :class="`d-flex justify-start`"
-            v-if="j!=='start'"
-          >
-            <v-card outlined color="white" height="30">{{texts[1][0]}}</v-card>
-            <v-card outlined color="white" height="30" class="ml-2">{{texts[1][1]}}</v-card>
-          </v-card>
-        </v-col>
-
-        <v-card outlined color="white" class="pa-2">
-          <v-card
-            v-if="index==0"
-            class="mx-auto text-center mt-5"
-            color="green"
-            dark
-            max-width="600"
-          >
-            <v-card-text>
-              <v-sheet color="rgba(0, 0, 0, .12)">
-                <v-sparkline
-                  :value="value"
-                  color="rgba(255, 255, 255, .7)"
-                  height="100"
-                  padding="24"
-                  stroke-linecap="round"
-                  smooth
-                >
-                  <template v-slot:label="item">${{ item.value }}</template>
-                </v-sparkline>
-              </v-sheet>
-            </v-card-text>
-
-            <v-card-text>
-              <div class="display-1 font-weight-thin">Sales Last 24h</div>
-            </v-card-text>
-          </v-card>
-        </v-card>
-
-        <v-col class="text-center" v-if="index==1">
-          <v-card outlined color="white" v-if="j=='start'">
-            <v-icon size="200px">mdi-cash-usd-outline</v-icon>
-            <h3>This area displays the total amount that your clients owe you.</h3>
-            <v-btn class="mt-10" color="teal lighten-3">Create your first billing note</v-btn>
-          </v-card>
-        </v-col>
-
-        <v-col class="text-center" v-if="index==1">
-          <v-card outlined color="white" v-if="j!=='start'">
-            <v-icon size="200px">mdi-clipboard-text-outline</v-icon>
-            <h3>This area displays the total amount that you owe your clients.</h3>
-            <v-btn class="mt-10" color="teal lighten-3">Create your first purchase</v-btn>
-          </v-card>
-        </v-col>
-      </v-card>
+      ></v-card>
     </v-card>
   </div>
 </template>
@@ -93,15 +17,13 @@
 export default {
   name: "dashboardPage",
   data: () => ({
-    justify: ["start", "end"],
-    value: [300, 446, 675, 510, 590, 610, 760],
-    years: ["30 day", "60 day", "90 day", "180 day", "1 year"],
-    texts: [["Collected", "Total"], ["Expense Total", "Income Total"]],
+    // justify: ["start", "end"],
+    // value: [300, 446, 675, 510, 590, 610, 760],
+    // years: ["30 day", "60 day", "90 day", "180 day", "1 year"],
+    // texts: [["Collected", "Total"], ["Expense Total", "Income Total"]],
     headerTopBlock: [
       ["mdi-chart-timeline-variant", "INCOME SUMMARY"],
-      ["mdi-clipboard-text-outline", "OUTSTANDING INVOICES"]
-    ],
-    headerBottomBlock: [
+      ["mdi-clipboard-text-outline", "OUTSTANDING INVOICES"],
       ["mdi-chart-timeline-variant", "EXPENSE SUMMARY"],
       ["mdi-clipboard-text-outline", "OUTSTANDING PAYMENTS"]
     ]
