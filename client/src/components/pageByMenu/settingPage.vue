@@ -22,8 +22,8 @@
       </v-app-bar>
     </v-card>
     <v-card class="d-flex justify-start my-12">
-      <v-card class="mt-10" v-for="n in 2" :key="n">
-        <v-card v-if="n==1" class="ml-5 d-flex flex-column" width="300px">
+      <v-card outlined color="white" class="mt-10" v-for="n in 2" :key="n">
+        <v-card outlined color="white" v-if="n==1" class="ml-5 d-flex flex-column" width="300px">
           <h3 class="mb-2 ml-4">Company Information</h3>
           <v-list-item
             v-for="(item,index) in dataCompony"
@@ -50,7 +50,8 @@
             <v-list-item-title class="pl-3">{{item[1]}}</v-list-item-title>
           </v-list-item>
         </v-card>
-        <v-card v-if="n==2" height="auto" width="800px">
+
+        <v-card class="text-center" outlined color="white" v-if="n==2" height="auto" width="800px">
           <router-view></router-view>
         </v-card>
       </v-card>

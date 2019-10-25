@@ -8,36 +8,31 @@
             <v-progress-linear color="teal lighten-3" rounded value="100"></v-progress-linear>
           </v-col>
         </v-row>
-
-        <v-card
-          class="d-flex flex-row justify-center"
-          v-for="j in justify"
-          :key="j"
-          :class="`d-flex justify-${j}`"
-          height="215"
-          flat
-          tile
-        >
+        <v-card class="d-flex flex-wrap justify-center" flat tile>
           <v-card
-            v-for="(item,index) in itemInTopCard"
+            v-for="(item,index) in itemInCard"
             :key="index"
-            class="text-center mt-2 mx-1"
-            width="287"
+            width="286"
+            height="215"
+            class="pa-2 ma-1"
             outlined
             tile
           >
-            <v-card class="pa-4 mb-2" outlined color="white" @click="clickChild(j,index)">
-              <v-icon size="80px">{{ (j=='start'? item[0]:itemInBottomCard[index][0]) }}</v-icon>
+            <v-card
+              @click="clickCard(index)"
+              class="pa-4 mb-2 text-center"
+              outlined
+              color="white"
+              link
+            >
+              <v-icon size="80px">{{ item[0]}}</v-icon>
               <h3>
                 <v-icon>mdi-plus</v-icon>
-                {{ (j=='start'? item[1]:itemInBottomCard[index][1]) }}
+                {{ item[1] }}
               </h3>
             </v-card>
-            <v-card outlined color="white">
-              <v-btn
-                @click="crossCheckAll(j,index)"
-                color="teal lighten-3"
-              >View all {{ (j=='start'? 'top ':'bottom ')+index }}</v-btn>
+            <v-card @click="clickViewAll(index)" outlined color="white" class="text-center">
+              <v-btn color="teal lighten-3">View all {{ index }}</v-btn>
             </v-card>
           </v-card>
         </v-card>
@@ -50,13 +45,11 @@ export default {
   name: "mainPage",
   data: () => ({
     justify: ["start", "end"],
-    itemInTopCard: [
+    itemInCard: [
       ["mdi-cash-usd", "Create Price Quotation"],
       ["mdi-note", "Create Billing Note"],
       ["mdi-newspaper", "Create Invoice/Receipt"],
-      ["mdi-note-text", "Create Purchase Order"]
-    ],
-    itemInBottomCard: [
+      ["mdi-note-text", "Create Purchase Order"],
       ["mdi-cash-refund", "Add Expenses"],
       ["mdi-file-percent-outline", "Create Withholding Tax"],
       ["mdi-account", "Add Contacts"],
@@ -64,45 +57,13 @@ export default {
     ]
   }),
   methods: {
-    clickChild(j, index) {
-      if (j == "start" && index == 0) {
-        // eslint-disable-next-line no-console
-        console.log("Top 0");
-      }
-      if (j == "start" && index == 1) {
-        // eslint-disable-next-line no-console
-        console.log("Top 1");
-      }
-      if (j == "start" && index == 2) {
-        // eslint-disable-next-line no-console
-        console.log("Top 2");
-      }
-      if (j == "start" && index == 3) {
-        // eslint-disable-next-line no-console
-        console.log("Top 3");
-      }
-
-      if (j == "end" && index == 0) {
-        // eslint-disable-next-line no-console
-        console.log("bottom 0");
-      }
-      if (j == "end" && index == 1) {
-        // eslint-disable-next-line no-console
-        console.log("bottom 1");
-      }
-      if (j == "end" && index == 2) {
-        // eslint-disable-next-line no-console
-        console.log("bottom 2");
-      }
-      if (j == "end" && index == 3) {
-        // eslint-disable-next-line no-console
-        console.log("bottom 3");
-      }
-    },
-    crossCheckAll(j, index) {
+    clickCard(index) {
       // eslint-disable-next-line no-console
-      console.log(j, index);
-      //if(j==start && index = 0){ Do somethings }
+      console.log(index);
+    },
+    clickViewAll(index) {
+      // eslint-disable-next-line no-console
+      console.log("Viewall : " + index);
     }
   }
 };
