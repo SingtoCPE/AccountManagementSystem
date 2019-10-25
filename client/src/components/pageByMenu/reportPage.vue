@@ -12,32 +12,29 @@
         <v-tab>Product</v-tab>
 
         <v-tab-item>
-          <v-card
-            v-for="j in justify"
-            :key="j"
-            :class="`d-flex justify-${j}`"
-            class="my-5"
-            height="215"
-            flat
-            tile
-            width="1155"
-          >
+          <v-card class="d-flex flex-wrap justify-center mt-6" flat tile>
             <v-card
-              v-for="(item,index) in itemInTopSell"
+              v-for="(item,index) in itemInSell"
               :key="index"
-              class="pa-4 mx-3"
-              width="370"
+              width="375"
+              height="215"
+              class="pa-2 ma-1"
               outlined
               tile
             >
-              <h2 class="mt-4 mb-2">{{ (j=='start'? item[0]:itemInBottomSell[index][0]) }}</h2>
-              <v-card outlined color="white" height="80">
-                <h4>{{ (j=='start'? item[1]:itemInBottomSell[index][1]) }}</h4>
+              <v-card
+                @click="clickCard(index)"
+                class="pa-4 mb-2 text-start"
+                outlined
+                color="white"
+                link
+              >
+                <h3>{{ item[0]}}</h3>
+                <h3>{{ item[1] }}</h3>
               </v-card>
-              <v-btn
-                @click="crossCheckAllSell(j,index)"
-                color="teal lighten-3"
-              >VIEW REPORT {{ (j=='start'? 'top ':'b ')+index }}</v-btn>
+              <v-card flat color="white" class="text-center">
+                <v-btn @click="clickViewAll(index)" color="teal lighten-3">View all {{ index }}</v-btn>
+              </v-card>
             </v-card>
           </v-card>
         </v-tab-item>
@@ -81,7 +78,7 @@ export default {
   data: () => ({
     justify: ["start", "end"],
     align: ["start", "end"],
-    itemInTopSell: [
+    itemInSell: [
       [
         "Sales",
         "Gives you a summary and helps you keep track of your sales for the month."
@@ -90,9 +87,7 @@ export default {
         "Clients",
         "Know who your best clients are so that you can focus you time and energy to serve them."
       ],
-      ["Price Quotation", "Summarizes and help you keep track of your."]
-    ],
-    itemInBottomSell: [
+      ["Price Quotation", "Summarizes and help you keep track of your."],
       [
         "Billing Note",
         "Summarizes and help you keep track of your billing Note/Invoice."
