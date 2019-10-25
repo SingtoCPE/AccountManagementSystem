@@ -1,80 +1,78 @@
 <template>
   <div id="reportPage">
-    <v-hover v-slot:default="{ hover }">
-      <v-card :elevation="hover ? 12 : 2" height="auto" width="auto">
-        <v-col class="teal lighten-3">
-          <h4>
-            <v-icon class="mr-2">mdi-clipboard-pulse</v-icon>REPORTS
-          </h4>
-        </v-col>
-        <v-tabs class="pa-7">
-          <v-tab>Sell</v-tab>
-          <v-tab>Buy</v-tab>
-          <v-tab>Product</v-tab>
+    <v-card elevation="5" height="auto" width="auto">
+      <v-col class="teal lighten-3">
+        <h4>
+          <v-icon class="mr-2">mdi-clipboard-pulse</v-icon>REPORTS
+        </h4>
+      </v-col>
+      <v-tabs class="pa-7">
+        <v-tab>Sell</v-tab>
+        <v-tab>Buy</v-tab>
+        <v-tab>Product</v-tab>
 
-          <v-tab-item>
+        <v-tab-item>
+          <v-card
+            v-for="j in justify"
+            :key="j"
+            :class="`d-flex justify-${j}`"
+            class="my-5"
+            height="215"
+            flat
+            tile
+            width="1155"
+          >
             <v-card
-              v-for="j in justify"
-              :key="j"
-              :class="`d-flex justify-${j}`"
-              class="my-5"
-              height="215"
-              flat
+              v-for="(item,index) in itemInTopSell"
+              :key="index"
+              class="pa-4 mx-3"
+              width="370"
+              outlined
               tile
-              width="1155"
             >
-              <v-card
-                v-for="(item,index) in itemInTopSell"
-                :key="index"
-                class="pa-4 mx-3"
-                width="370"
-                outlined
-                tile
-              >
-                <h2 class="mt-4 mb-2">{{ (j=='start'? item[0]:itemInBottomSell[index][0]) }}</h2>
-                <v-card outlined color="white" height="80">
-                  <h4>{{ (j=='start'? item[1]:itemInBottomSell[index][1]) }}</h4>
-                </v-card>
-                <v-btn
-                  @click="crossCheckAllSell(j,index)"
-                  color="teal lighten-3"
-                >VIEW REPORT {{ (j=='start'? 'top ':'b ')+index }}</v-btn>
+              <h2 class="mt-4 mb-2">{{ (j=='start'? item[0]:itemInBottomSell[index][0]) }}</h2>
+              <v-card outlined color="white" height="80">
+                <h4>{{ (j=='start'? item[1]:itemInBottomSell[index][1]) }}</h4>
               </v-card>
+              <v-btn
+                @click="crossCheckAllSell(j,index)"
+                color="teal lighten-3"
+              >VIEW REPORT {{ (j=='start'? 'top ':'b ')+index }}</v-btn>
             </v-card>
-          </v-tab-item>
+          </v-card>
+        </v-tab-item>
 
-          <v-tab-item>
-            <v-card outlined color="white" class="d-flex justify-start mt-5">
-              <v-card
-                outlined
-                v-for="(item,index) in itemInBuy"
-                :key="index"
-                height="215"
-                class="pa-4 mx-3"
-                width="370"
-              >
-                <h2 class="mt-4 mb-2">{{ (index=='0'? item[0]:itemInBuy[index][0]) }}</h2>
-                <v-card outlined color="white" height="80">
-                  <h4>{{ (index=='1'? item[1]:itemInBuy[index][1]) }}</h4>
-                </v-card>
-                <v-btn @click="crossCheckAllBuy(index)" color="teal lighten-3">VIEW REPORT {{index}}</v-btn>
+        <v-tab-item>
+          <v-card outlined color="white" class="d-flex justify-start mt-5">
+            <v-card
+              outlined
+              v-for="(item,index) in itemInBuy"
+              :key="index"
+              height="215"
+              class="pa-4 mx-3"
+              width="370"
+            >
+              <h2 class="mt-4 mb-2">{{ (index=='0'? item[0]:itemInBuy[index][0]) }}</h2>
+              <v-card outlined color="white" height="80">
+                <h4>{{ (index=='1'? item[1]:itemInBuy[index][1]) }}</h4>
               </v-card>
+              <v-btn @click="crossCheckAllBuy(index)" color="teal lighten-3">VIEW REPORT {{index}}</v-btn>
             </v-card>
-          </v-tab-item>
-          <v-tab-item>
-            <v-card outlined color="white" class="d-flex justify-start mt-5">
-              <v-card outlined height="215" class="pa-4 mx-3" width="370">
-                <h2 class="mt-4 mb-2">Products</h2>
-                <v-card outlined color="white" height="80">
-                  <h4>View Sales revenue by product or service.</h4>
-                </v-card>
-                <v-btn @click="crossCheckAllProduct" color="teal lighten-3">VIEW REPORT</v-btn>
+          </v-card>
+        </v-tab-item>
+        <v-tab-item>
+          <v-card outlined color="white" class="d-flex justify-start mt-5">
+            <v-card outlined height="215" class="pa-4 mx-3" width="370">
+              <h2 class="mt-4 mb-2">Products</h2>
+              <v-card outlined color="white" height="80">
+                <h4>View Sales revenue by product or service.</h4>
               </v-card>
+              <v-btn @click="crossCheckAllProduct" color="teal lighten-3">VIEW REPORT</v-btn>
             </v-card>
-          </v-tab-item>
-        </v-tabs>
-      </v-card>
-    </v-hover>
+          </v-card>
+        </v-tab-item>
+      </v-tabs>
+    </v-card>
   </div>
 </template>
 <script>

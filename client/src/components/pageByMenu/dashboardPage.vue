@@ -1,6 +1,6 @@
 <template>
   <div id="dashboardPage">
-    <v-card class="d-flex flex-wrap justify-center" color="transparent" flat tile>
+    <v-card elevation="5" class="d-flex flex-wrap justify-center" color="transparent" flat tile>
       <v-card
         v-for="(item,index) in headerTopBlock"
         :key="index"
