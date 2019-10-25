@@ -1,12 +1,13 @@
 <template>
   <div id="dashboardPage">
-    <v-card elevation="5" class="d-flex flex-wrap justify-center" color="transparent" flat tile>
+    <v-card class="d-flex flex-wrap justify-space-between" color="transparent" flat tile>
       <v-card
         v-for="(item,index) in headerTopBlock"
         :key="index"
-        width="585"
+        elevation="2"
+        width="598"
         height="550"
-        class="mx-2 mb-4"
+        class="mb-4"
         outlined
         tile
       ></v-card>

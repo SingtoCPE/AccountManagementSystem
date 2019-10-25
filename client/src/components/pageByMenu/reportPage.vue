@@ -1,6 +1,6 @@
 <template>
   <div id="reportPage">
-    <v-card elevation="5" height="auto" width="auto">
+    <v-card elevation="2" height="auto" width="auto">
       <v-col class="teal lighten-3">
         <h4>
           <v-icon class="mr-2">mdi-clipboard-pulse</v-icon>REPORTS

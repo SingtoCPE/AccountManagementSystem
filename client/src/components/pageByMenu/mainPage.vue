@@ -1,6 +1,6 @@
 <template>
   <div id="mainPage">
-    <v-card elevation="5" height="550" width="auto" class="px-4 py-3">
+    <v-card elevation="2" height="550" width="auto" class="px-4 py-3">
       <v-row justify="center">
         <v-col cols="12" sm="5" class="mb-2 align-center">
           <h2 class="text-center mb-2">WHAT WOULD YOU LIKE TO DO TODAY?</h2>

@@ -1,6 +1,6 @@
 <template>
   <div id="menuBar">
-    <v-card elevation="5" class="ma-auto">
+    <v-card elevation="2" class="ma-auto">
       <v-list>
         <v-list-item :to="{ path: '/homePage/mainPage'}" link>
           <v-col class="brown lighten-5 pa-3">

@@ -2,7 +2,7 @@
   <div id="receiptPage">
     <v-card
       class="d-flex flex-column justify-space-between"
-      elevation="5"
+      elevation="2"
       height="550"
       width="auto"
     >
