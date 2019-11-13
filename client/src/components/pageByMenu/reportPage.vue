@@ -22,13 +22,7 @@
               outlined
               tile
             >
-              <v-card
-                @click="clickCard(index)"
-                class="pa-4 mb-2 text-start"
-                outlined
-                color="white"
-                link
-              >
+              <v-card class="pa-4 mb-2 text-start" outlined color="white">
                 <h3>{{ item[0]}}</h3>
                 <h3>{{ item[1] }}</h3>
               </v-card>
@@ -40,31 +34,37 @@
         </v-tab-item>
 
         <v-tab-item>
-          <v-card outlined color="white" class="d-flex justify-start mt-5">
+          <v-card class="d-flex flex-wrap justify-start mt-6" flat tile>
             <v-card
-              outlined
               v-for="(item,index) in itemInBuy"
               :key="index"
+              width="375"
               height="215"
-              class="pa-4 mx-3"
-              width="370"
+              class="pa-2 ma-1"
+              outlined
+              tile
             >
-              <h2 class="mt-4 mb-2">{{ (index=='0'? item[0]:itemInBuy[index][0]) }}</h2>
-              <v-card outlined color="white" height="80">
-                <h4>{{ (index=='1'? item[1]:itemInBuy[index][1]) }}</h4>
+              <v-card class="pa-4 mb-2 text-start" outlined color="white">
+                <h3>{{ item[0]}}</h3>
+                <h3>{{ item[1] }}</h3>
               </v-card>
-              <v-btn @click="crossCheckAllBuy(index)" color="teal lighten-3">VIEW REPORT {{index}}</v-btn>
+              <v-card flat color="white" class="text-center">
+                <v-btn @click="clickViewAll(index)" color="teal lighten-3">View all {{ index }}</v-btn>
+              </v-card>
             </v-card>
           </v-card>
         </v-tab-item>
+
         <v-tab-item>
-          <v-card outlined color="white" class="d-flex justify-start mt-5">
-            <v-card outlined height="215" class="pa-4 mx-3" width="370">
-              <h2 class="mt-4 mb-2">Products</h2>
-              <v-card outlined color="white" height="80">
-                <h4>View Sales revenue by product or service.</h4>
+          <v-card outlined color="white" class="d-flex justify-start mt-6">
+            <v-card width="375" height="215" class="pa-2 ma-1" outlined tile>
+              <v-card class="pa-4 mb-2 text-start" outlined color="white">
+                <h3>Products</h3>
+                <v-card outlined color="white" height="80">
+                  <h4>View Sales revenue by product or service.</h4>
+                </v-card>
+                <v-btn @click="crossCheckAllProduct" color="teal lighten-3">VIEW REPORT</v-btn>
               </v-card>
-              <v-btn @click="crossCheckAllProduct" color="teal lighten-3">VIEW REPORT</v-btn>
             </v-card>
           </v-card>
         </v-tab-item>
