@@ -22,12 +22,12 @@
               outlined
               tile
             >
-              <v-card class="pa-4 mb-2 text-start" outlined color="white">
+              <v-card class="pa-4 mb-2 text-start" height="150" outlined color="white">
                 <h3>{{ item[0]}}</h3>
                 <h3>{{ item[1] }}</h3>
               </v-card>
-              <v-card flat color="white" class="text-center">
-                <v-btn @click="clickViewAll(index)" color="teal lighten-3">View all {{ index }}</v-btn>
+              <v-card flat color="white" class="text-start ml-5">
+                <v-btn @click="clickViewAll(index)" color="teal lighten-3">VIEW REPORT {{ index }}</v-btn>
               </v-card>
             </v-card>
           </v-card>
@@ -44,25 +44,27 @@
               outlined
               tile
             >
-              <v-card class="pa-4 mb-2 text-start" outlined color="white">
+              <v-card class="pa-4 mb-2 text-start" height="150" outlined color="white">
                 <h3>{{ item[0]}}</h3>
                 <h3>{{ item[1] }}</h3>
               </v-card>
-              <v-card flat color="white" class="text-center">
-                <v-btn @click="clickViewAll(index)" color="teal lighten-3">View all {{ index }}</v-btn>
+              <v-card flat color="white" class="text-start ml-5">
+                <v-btn @click="clickViewAll(index)" color="teal lighten-3">VIEW REPORT {{ index }}</v-btn>
               </v-card>
             </v-card>
           </v-card>
         </v-tab-item>
 
         <v-tab-item>
-          <v-card outlined color="white" class="d-flex justify-start mt-6">
+          <v-card class="d-flex flex-wrap justify-start mt-6" flat tile>
             <v-card width="375" height="215" class="pa-2 ma-1" outlined tile>
-              <v-card class="pa-4 mb-2 text-start" outlined color="white">
+              <v-card class="pa-4 mb-2 text-start" height="150" outlined color="white">
                 <h3>Products</h3>
                 <v-card outlined color="white" height="80">
                   <h4>View Sales revenue by product or service.</h4>
                 </v-card>
+              </v-card>
+              <v-card flat color="white" class="text-start ml-5">
                 <v-btn @click="crossCheckAllProduct" color="teal lighten-3">VIEW REPORT</v-btn>
               </v-card>
             </v-card>
