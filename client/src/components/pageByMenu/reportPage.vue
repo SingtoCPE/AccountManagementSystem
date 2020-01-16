@@ -10,11 +10,11 @@
         <v-tab>Product</v-tab>
 
         <v-tab-item>
-          <v-card class="d-flex flex-wrap justify-center mt-6" flat tile>
+          <v-card class="d-flex flex-wrap justify-center mt-6 " flat tile>
             <v-card
               v-for="(item, index) in itemInSell"
               :key="index"
-              width="375"
+              width="335"
               height="215"
               class="pa-2 ma-1"
               outlined
@@ -43,7 +43,7 @@
             <v-card
               v-for="(item, index) in itemInBuy"
               :key="index"
-              width="375"
+              width="335"
               height="215"
               class="pa-2 ma-1"
               outlined
@@ -69,7 +69,7 @@
 
         <v-tab-item>
           <v-card class="d-flex flex-wrap justify-start mt-6" flat tile>
-            <v-card width="375" height="215" class="pa-2 ma-1" outlined tile>
+            <v-card width="335" height="215" class="pa-2 ma-1" outlined tile>
               <v-card
                 class="pa-4 mb-2 text-start"
                 height="150"
