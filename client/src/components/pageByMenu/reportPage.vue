@@ -2,9 +2,7 @@
   <div id="reportPage">
     <v-card elevation="2" height="auto" width="auto">
       <v-col class="teal lighten-3">
-        <h4>
-          <v-icon class="mr-2">mdi-clipboard-pulse</v-icon>REPORTS
-        </h4>
+        <h4><v-icon class="mr-2">mdi-clipboard-pulse</v-icon>REPORTS</h4>
       </v-col>
       <v-tabs class="pa-7">
         <v-tab>Sell</v-tab>
@@ -14,7 +12,7 @@
         <v-tab-item>
           <v-card class="d-flex flex-wrap justify-center mt-6" flat tile>
             <v-card
-              v-for="(item,index) in itemInSell"
+              v-for="(item, index) in itemInSell"
               :key="index"
               width="375"
               height="215"
@@ -22,12 +20,19 @@
               outlined
               tile
             >
-              <v-card class="pa-4 mb-2 text-start" height="150" outlined color="white">
-                <h3>{{ item[0]}}</h3>
+              <v-card
+                class="pa-4 mb-2 text-start"
+                height="150"
+                outlined
+                color="white"
+              >
+                <h3>{{ item[0] }}</h3>
                 <h3>{{ item[1] }}</h3>
               </v-card>
               <v-card flat color="white" class="text-start ml-5">
-                <v-btn @click="clickViewAll(index)" color="teal lighten-3">VIEW REPORT {{ index }}</v-btn>
+                <v-btn @click="clickViewAll(index)" color="teal lighten-3"
+                  >VIEW REPORT {{ index }}</v-btn
+                >
               </v-card>
             </v-card>
           </v-card>
@@ -36,7 +41,7 @@
         <v-tab-item>
           <v-card class="d-flex flex-wrap justify-start mt-6" flat tile>
             <v-card
-              v-for="(item,index) in itemInBuy"
+              v-for="(item, index) in itemInBuy"
               :key="index"
               width="375"
               height="215"
@@ -44,12 +49,19 @@
               outlined
               tile
             >
-              <v-card class="pa-4 mb-2 text-start" height="150" outlined color="white">
-                <h3>{{ item[0]}}</h3>
+              <v-card
+                class="pa-4 mb-2 text-start"
+                height="150"
+                outlined
+                color="white"
+              >
+                <h3>{{ item[0] }}</h3>
                 <h3>{{ item[1] }}</h3>
               </v-card>
               <v-card flat color="white" class="text-start ml-5">
-                <v-btn @click="clickViewAll(index)" color="teal lighten-3">VIEW REPORT {{ index }}</v-btn>
+                <v-btn @click="clickViewAll(index)" color="teal lighten-3"
+                  >VIEW REPORT {{ index }}</v-btn
+                >
               </v-card>
             </v-card>
           </v-card>
@@ -58,14 +70,21 @@
         <v-tab-item>
           <v-card class="d-flex flex-wrap justify-start mt-6" flat tile>
             <v-card width="375" height="215" class="pa-2 ma-1" outlined tile>
-              <v-card class="pa-4 mb-2 text-start" height="150" outlined color="white">
+              <v-card
+                class="pa-4 mb-2 text-start"
+                height="150"
+                outlined
+                color="white"
+              >
                 <h3>Products</h3>
                 <v-card outlined color="white" height="80">
                   <h4>View Sales revenue by product or service.</h4>
                 </v-card>
               </v-card>
               <v-card flat color="white" class="text-start ml-5">
-                <v-btn @click="crossCheckAllProduct" color="teal lighten-3">VIEW REPORT</v-btn>
+                <v-btn @click="crossCheckAllProduct" color="teal lighten-3"
+                  >VIEW REPORT</v-btn
+                >
               </v-card>
             </v-card>
           </v-card>

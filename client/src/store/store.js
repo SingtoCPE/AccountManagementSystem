@@ -7,7 +7,7 @@ import auth from "@/utils/auth.js";
 Vue.use(Vuex);
 Vue.use(VueLocalStorage);
 
-const endpointLogin = "http://localhost:3033/employee/login";
+const endpointLogin = "http://localhost:3000/employee/login";
 
 export const store = new Vuex.Store({
   state: {
