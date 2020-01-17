@@ -14,7 +14,7 @@
       </v-col>
 
       <v-col class="px-2 pt-0 ml-1 mb-8">
-        <router-view />
+        <router-view> </router-view>
       </v-col>
     </v-col>
   </div>
@@ -26,7 +26,6 @@ import { mapState } from "vuex";
 
 export default {
   name: "PrivateLayout",
-  data: () => ({}),
   components: {
     menuBar,
     headerHomePage

@@ -46,7 +46,7 @@ export const store = new Vuex.Store({
       }
     },
     clearToken() {
-      window.location.href = "http://localhost:8080";
+      window.location.href = "http://localhost:8080/#/login";
       Vue.localStorage.remove("AuthToken");
     }
   }

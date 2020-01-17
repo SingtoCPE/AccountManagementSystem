@@ -26,7 +26,14 @@ export default new Router({
         {
           path: "mainpage",
           name: "mainpage",
-          component: () => import("@/components/layouts/PrivateLayout.vue")
+          component: () => import("@/components/layouts/PrivateLayout.vue"),
+          children: [
+            {
+              path: "/sell/invoice",
+              name: "invoice",
+              component: () => import("@/pages/sell/InvoicePage.vue")
+            }
+          ]
         }
       ]
     },
