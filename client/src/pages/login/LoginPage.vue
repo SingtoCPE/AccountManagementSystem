@@ -4,8 +4,15 @@
       <v-col cols="12" sm="8" md="4">
         <v-hover v-slot:default="{ hover }">
           <v-card :elevation="hover ? 12 : 2">
-            <v-toolbar class="d-flex justify-center" color="teal lighten-1" dark flat>
-              <v-toolbar-title class="font-weight-bold">Account Login</v-toolbar-title>
+            <v-toolbar
+              class="d-flex justify-center"
+              color="teal lighten-1"
+              dark
+              flat
+            >
+              <v-toolbar-title class="font-weight-bold"
+                >Account Login</v-toolbar-title
+              >
             </v-toolbar>
 
             <v-card-text class="white">
@@ -39,7 +46,8 @@
                 class="white--text"
                 color="teal lighten-1"
                 @click="accountLogin"
-              >Login</v-btn>
+                >Login</v-btn
+              >
             </v-card-actions>
           </v-card>
         </v-hover>
@@ -50,7 +58,7 @@
 
 <script>
 export default {
-  name: "loginPage",
+  name: "LoginPage",
   data() {
     return {
       account: {

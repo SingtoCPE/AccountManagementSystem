@@ -2,13 +2,33 @@ import Vue from "vue";
 import Router from "vue-router";
 
 Vue.use(Router);
-
+// KuyTok
 export default new Router({
   routes: [
     {
       path: "/",
-      name: "login",
-      component: () => import("@/components/loginPage/loginPage.vue")
+      name: "public",
+      component: () => import("@/components/layouts/PublicLayout.vue"),
+      children: [
+        {
+          path: "/login",
+          name: "login",
+          component: () => import("@/pages/login/LoginPage.vue")
+        }
+      ]
+    },
+
+    {
+      path: "/",
+      name: "private",
+      component: () => import("@/components/layouts/PrivateLayout.vue"),
+      children: [
+        {
+          path: "sell/invoice",
+          name: "invoice",
+          component: () => import("@/pages/sell/InvoicePage.vue")
+        }
+      ]
     },
 
     {
@@ -25,21 +45,7 @@ export default new Router({
           path: "dashboardPage",
           component: () => import("@/components/pageByMenu/dashboardPage.vue")
         },
-        {
-          path: "sellPage/priceQuotationPage",
-          component: () =>
-            import("@/components/pageByMenu/sellPage/priceQuotationPage.vue")
-        },
-        {
-          path: "sellPage/billingNotePage",
-          component: () =>
-            import("@/components/pageByMenu/sellPage/billingNotePage.vue")
-        },
-        {
-          path: "sellPage/receiptPage",
-          component: () =>
-            import("@/components/pageByMenu/sellPage/receiptPage.vue")
-        },
+
         {
           path: "buyPage/purchaseOrderPage",
           component: () =>
