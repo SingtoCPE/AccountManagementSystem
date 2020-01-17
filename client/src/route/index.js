@@ -24,9 +24,9 @@ export default new Router({
       component: () => import("@/components/layouts/PrivateLayout.vue"),
       children: [
         {
-          path: "sell/invoice",
-          name: "invoice",
-          component: () => import("@/pages/sell/InvoicePage.vue")
+          path: "mainpage",
+          name: "mainpage",
+          component: () => import("@/components/layouts/PrivateLayout.vue")
         }
       ]
     },
@@ -37,10 +37,6 @@ export default new Router({
       component: () => import("@/components/homePage/homePage.vue"),
       meta: { requiresAuth: true },
       children: [
-        {
-          path: "mainPage",
-          component: () => import("@/components/pageByMenu/mainPage.vue")
-        },
         {
           path: "dashboardPage",
           component: () => import("@/components/pageByMenu/dashboardPage.vue")
