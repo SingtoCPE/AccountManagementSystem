@@ -28,6 +28,16 @@
             <v-icon class="pl-3">mdi-square-small</v-icon>
             <v-list-item-title class="pl-8">Invoice</v-list-item-title>
           </v-list-item>
+
+          <v-list-item :to="{ name: 'billingNote' }">
+            <v-icon class="pl-3">mdi-square-small</v-icon>
+            <v-list-item-title class="pl-8">Billing</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item :to="{ name: 'priceQuotation' }">
+            <v-icon class="pl-3">mdi-square-small</v-icon>
+            <v-list-item-title class="pl-8">priceQuotation</v-list-item-title>
+          </v-list-item>
         </v-list-group>
 
         <v-list-group>
@@ -38,12 +48,9 @@
             <v-list-item-title class="pl-3">Buy</v-list-item-title>
           </template>
 
-          <v-list-item v-for="(item, i) in buy" :key="i" :to="item[1]">
+          <v-list-item :to="{ name: 'purchaseOrder' }">
             <v-icon class="pl-3">mdi-square-small</v-icon>
-            <v-list-item-title
-              class="pl-8"
-              v-text="item[0]"
-            ></v-list-item-title>
+            <v-list-item-title class="pl-8">purchaseOrder</v-list-item-title>
           </v-list-item>
         </v-list-group>
 

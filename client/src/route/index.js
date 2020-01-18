@@ -32,6 +32,21 @@ export default new Router({
               path: "/sell/invoice",
               name: "invoice",
               component: () => import("@/pages/sell/InvoicePage.vue")
+            },
+            {
+              path: "/sell/billingNote",
+              name: "billingNote",
+              component: () => import("@/pages/sell/billingNotePage.vue")
+            },
+            {
+              path: "/sell/priceQuotation",
+              name: "priceQuotation",
+              component: () => import("@/pages/sell/priceQuotationPage.vue")
+            },
+            {
+              path: "/buy/purchaseOrder",
+              name: "purchaseOrder",
+              component: () => import("@/pages/buy/purchaseOrderPage.vue")
             }
           ]
         }
@@ -49,16 +64,6 @@ export default new Router({
           component: () => import("@/components/pageByMenu/dashboardPage.vue")
         },
 
-        {
-          path: "buyPage/purchaseOrderPage",
-          component: () =>
-            import("@/components/pageByMenu/buyPage/purchaseOrderPage.vue")
-        },
-        {
-          path: "buyPage/receivingInventoryPage",
-          component: () =>
-            import("@/components/pageByMenu/buyPage/receivingInventoryPage.vue")
-        },
         {
           path: "expensePage/expensePage",
           component: () =>
