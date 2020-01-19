@@ -1,5 +1,5 @@
 <template>
-  <div id="contactsPage">
+  <div id="ContactsPage">
     <v-card
       class="d-flex flex-column justify-space-between"
       elevation="2"
@@ -12,7 +12,12 @@
             <v-icon class="mr-2">mdi-account-circle</v-icon>CONTACTS OVERVIEW
           </h4>
         </v-col>
-        <v-card height="40" color="white" outlined class="d-flex justify-end mb-3">
+        <v-card
+          height="40"
+          color="white"
+          outlined
+          class="d-flex justify-end mb-3"
+        >
           <v-card
             outlined
             color="white"
@@ -29,7 +34,9 @@
               <v-list color="grey lighten-5" width="250">
                 <v-list-item>
                   <v-list-item-title>
-                    <v-btn block color="grey lighten-3">Download to excel</v-btn>
+                    <v-btn block color="grey lighten-3"
+                      >Download to excel</v-btn
+                    >
                   </v-list-item-title>
                 </v-list-item>
               </v-list>
@@ -118,10 +125,18 @@
         <v-spacer class="d-flex justify-center">
           <v-card outlined color="transparent" class="mx-5">
             <div class="text-center mt-1">
-              <v-pagination v-model="page" :length="7" :total-visible="4"></v-pagination>
+              <v-pagination
+                v-model="page"
+                :length="7"
+                :total-visible="4"
+              ></v-pagination>
             </div>
           </v-card>
-          <v-card outlined color="transparent" class="mx-5 d-flex justify-space-around">
+          <v-card
+            outlined
+            color="transparent"
+            class="mx-5 d-flex justify-space-around"
+          >
             <h4 class="mt-3">row per page :</h4>
             <v-card outlined class="ml-2" width="100" height="50">
               <v-select :items="allList" label="0" solo></v-select>
@@ -134,7 +149,7 @@
 </template>
 <script>
 export default {
-  name: "contactsPage",
+  name: "ContactsPage",
   data: () => ({
     allList: [1, 2, 3, 4, 5, 6, 7, 8, 9],
     page: 1

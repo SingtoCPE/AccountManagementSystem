@@ -24,8 +24,8 @@ export default new Router({
       meta: { requiresAuth: true },
       children: [
         {
-          path: "mainpage",
-          name: "mainpage",
+          path: "home",
+          name: "home",
           component: () => import("@/pages/mainPage.vue")
         },
         {
@@ -82,38 +82,31 @@ export default new Router({
         {
           path: "account",
           name: "account",
-          component: () => import("@/pages/accountPage.vue"),
-          meta: { requiresAuth: true }
+          component: () => import("@/pages/AccountPage.vue")
+        },
+        {
+          path: "report",
+          name: "report",
+          component: () => import("@/pages/reportPage.vue")
+        },
+        {
+          path: "product",
+          name: "product",
+          component: () => import("@/pages/productPage.vue")
+        },
+        {
+          path: "contacts",
+          name: "contacts",
+          component: () => import("@/pages/contactsPage.vue")
         }
       ]
     },
 
     {
-      path: "/homePage/",
-      name: "loged",
-      component: () => import("@/components/homePage/homePage.vue"),
-      meta: { requiresAuth: true },
-      children: [
-        {
-          path: "reportPage",
-          component: () => import("@/components/pageByMenu/reportPage.vue")
-        },
-        {
-          path: "productPage",
-          component: () => import("@/components/pageByMenu/productPage.vue")
-        },
-        {
-          path: "contactsPage",
-          component: () => import("@/components/pageByMenu/contactsPage.vue")
-        }
-      ]
-    },
-
-    {
-      path: "/homePage/settingPage/",
+      path: "/setting/",
       name: "setting",
       meta: { requiresAuth: true },
-      component: () => import("@/components/pageByMenu/settingPage.vue"),
+      component: () => import("@/pages/settingPage.vue"),
       children: [
         {
           path: "companyPage",

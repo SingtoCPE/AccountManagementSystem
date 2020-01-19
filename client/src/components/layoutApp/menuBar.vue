@@ -2,7 +2,7 @@
   <div id="menuBar">
     <v-card elevation="2" class="ma-auto">
       <v-list>
-        <v-list-item :to="{ name: 'mainpage' }">
+        <v-list-item :to="{ name: 'home' }">
           <v-col class="brown lighten-5 pa-3">
             <v-icon>mdi-home</v-icon>
           </v-col>
@@ -99,28 +99,28 @@
           </v-list-item>
         </v-list-group>
 
-        <v-list-item :to="{ path: '/homePage/reportPage' }">
+        <v-list-item :to="{ name: 'report' }">
           <v-col class="brown lighten-5 pa-3">
             <v-icon>mdi-clipboard-pulse</v-icon>
           </v-col>
           <v-list-item-title class="pl-3">Report</v-list-item-title>
         </v-list-item>
 
-        <v-list-item :to="{ path: '/homePage/productPage' }">
+        <v-list-item :to="{ name: 'product' }">
           <v-col class="brown lighten-5 pa-3">
             <v-icon>mdi-package-variant-closed</v-icon>
           </v-col>
           <v-list-item-title class="pl-3">Product</v-list-item-title>
         </v-list-item>
 
-        <v-list-item :to="{ path: '/homePage/contactsPage' }">
+        <v-list-item :to="{ name: 'contacts' }">
           <v-col class="brown lighten-5 pa-3">
             <v-icon>mdi-account-circle</v-icon>
           </v-col>
           <v-list-item-title class="pl-3">Contacts</v-list-item-title>
         </v-list-item>
 
-        <v-list-item :to="{ path: '/homePage/settingPage' }">
+        <v-list-item :to="{ name: 'setting' }">
           <v-col class="brown lighten-5 pa-3">
             <v-icon>mdi-settings</v-icon>
           </v-col>

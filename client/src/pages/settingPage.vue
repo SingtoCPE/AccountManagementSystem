@@ -20,7 +20,7 @@
         </v-toolbar-title>
         <v-spacer></v-spacer>
         <v-btn
-          :to="{ path: '/mainPage' }"
+          :to="{ path: '/home' }"
           height="60px"
           width="auto"
           color="rgba(200,84,100,.5), rgba(128,208,199,.8)"
