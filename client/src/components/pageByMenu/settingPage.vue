@@ -1,9 +1,17 @@
 <template>
   <div id="settingPage">
     <v-card>
-      <v-app-bar absolute color="#fcb69f" dark src="https://picsum.photos/1920/1080?random">
+      <v-app-bar
+        absolute
+        color="#fcb69f"
+        dark
+        src="https://picsum.photos/1920/1080?random"
+      >
         <template v-slot:img="{ props }">
-          <v-img v-bind="props" gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"></v-img>
+          <v-img
+            v-bind="props"
+            gradient="to top right, rgba(19,84,122,.5), rgba(128,208,199,.8)"
+          ></v-img>
         </template>
         <v-toolbar-title>
           <h3>
@@ -12,7 +20,7 @@
         </v-toolbar-title>
         <v-spacer></v-spacer>
         <v-btn
-          :to="{ path: '/homePage/mainPage'}"
+          :to="{ path: '/mainPage' }"
           height="60px"
           width="auto"
           color="rgba(200,84,100,.5), rgba(128,208,199,.8)"
@@ -23,35 +31,48 @@
     </v-card>
     <v-card class="d-flex justify-start my-12">
       <v-card outlined color="white" class="mt-10" v-for="n in 2" :key="n">
-        <v-card outlined color="white" v-if="n==1" class="ml-5 d-flex flex-column" width="300px">
+        <v-card
+          outlined
+          color="white"
+          v-if="n == 1"
+          class="ml-5 d-flex flex-column"
+          width="300px"
+        >
           <h3 class="mb-2 ml-4">Company Information</h3>
           <v-list-item
-            v-for="(item,index) in dataCompony"
+            v-for="(item, index) in dataCompony"
             :key="`${index}-${item}`"
             :to="item[2]"
             link
           >
             <v-col class="brown lighten-5 pa-3">
-              <v-icon>{{item[0]}}</v-icon>
+              <v-icon>{{ item[0] }}</v-icon>
             </v-col>
-            <v-list-item-title class="pl-3">{{item[1]}}</v-list-item-title>
+            <v-list-item-title class="pl-3">{{ item[1] }}</v-list-item-title>
           </v-list-item>
           <h3 class="mb-2 ml-4 mt-2">User Information</h3>
 
           <v-list-item
-            v-for="(item,index) in dataUser"
+            v-for="(item, index) in dataUser"
             :key="`${index}-${item}`"
             :to="item[2]"
             link
           >
             <v-col class="brown lighten-5 pa-3">
-              <v-icon>{{item[0]}}</v-icon>
+              <v-icon>{{ item[0] }}</v-icon>
             </v-col>
-            <v-list-item-title class="pl-3">{{item[1]}}</v-list-item-title>
+            <v-list-item-title class="pl-3">{{ item[1] }}</v-list-item-title>
           </v-list-item>
         </v-card>
 
-        <v-card class="text-center" outlined color="white" v-if="n==2" height="auto" width="800px">
+        <v-card
+          class="text-center"
+          outlined
+          color="white"
+          v-if="n == 2"
+          height="auto"
+          width="800px"
+        >
           <router-view></router-view>
         </v-card>
       </v-card>

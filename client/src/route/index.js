@@ -21,69 +21,63 @@ export default new Router({
       path: "/",
       name: "private",
       component: () => import("@/components/layouts/PrivateLayout.vue"),
+      meta: { requiresAuth: true },
       children: [
         {
           path: "mainpage",
           name: "mainpage",
-          component: () => import("@/components/layouts/PrivateLayout.vue"),
-          meta: { requiresAuth: true },
-          children: [
-            {
-              path: "mainpage",
-              name: "mainpage",
-              component: () => import("@/pages/mainPage.vue")
-            },
-            {
-              path: "dashboard",
-              name: "dashboard",
-              component: () => import("@/pages/dashboardPage.vue")
-            },
-            {
-              path: "/sell/invoice",
-              name: "invoice",
-              component: () => import("@/pages/sell/InvoicePage.vue")
-            },
-            {
-              path: "/sell/billingNote",
-              name: "billingNote",
-              component: () => import("@/pages/sell/billingNotePage.vue")
-            },
-            {
-              path: "/sell/priceQuotation",
-              name: "priceQuotation",
-              component: () => import("@/pages/sell/priceQuotationPage.vue")
-            },
-            {
-              path: "/buy/purchaseOrder",
-              name: "purchaseOrder",
-              component: () => import("@/pages/buy/purchaseOrderPage.vue")
-            },
-            {
-              path: "/buy/receivingInventory",
-              name: "receivingInventory",
-              component: () => import("@/pages/buy/receivingInventoryPage.vue")
-            },
-            {
-              path: "/expense",
-              name: "expense",
-              component: () => import("@/pages/expense/expensePage.vue")
-            },
-            {
-              path: "/expense/withholding",
-              name: "withholding",
-              component: () => import("@/pages/expense/withholdingPage.vue")
-            },
-            {
-              path: "/payroll/employeeList",
-              name: "employeeList",
-              component: () => import("@/pages/payroll/employeeListPage.vue")
-            },
-            {
-              path: "/payroll/runPayroll",
-              name: "runPayroll",
-              component: () => import("@/pages/payroll/runPayrollPage.vue")
-            }
-          ]
+          component: () => import("@/pages/mainPage.vue")
+        },
+        {
+          path: "/buy/purchaseOrder",
+          name: "purchaseOrder",
+          component: () => import("@/pages/buy/purchaseOrderPage.vue")
+        },
+        {
+          path: "/buy/receivingInventory",
+          name: "receivingInventory",
+          component: () => import("@/pages/buy/receivingInventoryPage.vue")
+        },
+        {
+          path: "/expense",
+          name: "expense",
+          component: () => import("@/pages/expense/expensePage.vue")
+        },
+        {
+          path: "/expense/withholding",
+          name: "withholding",
+          component: () => import("@/pages/expense/withholdingPage.vue")
+        },
+        {
+          path: "/payroll/employeeList",
+          name: "employeeList",
+          component: () => import("@/pages/payroll/employeeListPage.vue")
+        },
+        {
+          path: "/payroll/runPayroll",
+          name: "runPayroll",
+          component: () => import("@/pages/payroll/runPayrollPage.vue")
+        },
+        {
+          path: "dashboard",
+          name: "dashboard",
+          component: () => import("@/pages/dashboardPage.vue")
+        },
+
+        {
+          path: "/sell/invoice",
+          name: "invoice",
+          component: () => import("@/pages/sell/InvoicePage.vue")
+        },
+        {
+          path: "/sell/billingNote",
+          name: "billingNote",
+          component: () => import("@/pages/sell/billingNotePage.vue")
+        },
+        {
+          path: "/sell/priceQuotation",
+          name: "priceQuotation",
+          component: () => import("@/pages/sell/priceQuotationPage.vue")
         },
         {
           path: "account",
