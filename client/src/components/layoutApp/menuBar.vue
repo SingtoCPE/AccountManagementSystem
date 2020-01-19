@@ -2,14 +2,14 @@
   <div id="menuBar">
     <v-card elevation="2" class="ma-auto">
       <v-list>
-        <v-list-item :to="{ path: '/homePage/mainPage' }">
+        <v-list-item :to="{ name: 'mainpage' }">
           <v-col class="brown lighten-5 pa-3">
             <v-icon>mdi-home</v-icon>
           </v-col>
           <v-list-item-title class="pl-3">Home</v-list-item-title>
         </v-list-item>
 
-        <v-list-item :to="{ path: '/homePage/dashboardPage' }">
+        <v-list-item :to="{ name: 'dashboard' }">
           <v-col class="brown lighten-5 pa-3">
             <v-icon>mdi-star</v-icon>
           </v-col>
@@ -52,6 +52,13 @@
             <v-icon class="pl-3">mdi-square-small</v-icon>
             <v-list-item-title class="pl-8">purchaseOrder</v-list-item-title>
           </v-list-item>
+
+          <v-list-item :to="{ name: 'receivingInventory' }">
+            <v-icon class="pl-3">mdi-square-small</v-icon>
+            <v-list-item-title class="pl-8"
+              >receivingInventory</v-list-item-title
+            >
+          </v-list-item>
         </v-list-group>
 
         <v-list-group>
@@ -62,12 +69,14 @@
             <v-list-item-title class="pl-3">Expense</v-list-item-title>
           </template>
 
-          <v-list-item v-for="(item, i) in expense" :key="i" :to="item[1]">
+          <v-list-item :to="{ name: 'expense' }">
             <v-icon class="pl-3">mdi-square-small</v-icon>
-            <v-list-item-title
-              class="pl-8"
-              v-text="item[0]"
-            ></v-list-item-title>
+            <v-list-item-title class="pl-8">Expense</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item :to="{ name: 'withholding' }">
+            <v-icon class="pl-3">mdi-square-small</v-icon>
+            <v-list-item-title class="pl-8">withholding</v-list-item-title>
           </v-list-item>
         </v-list-group>
 
@@ -79,12 +88,14 @@
             <v-list-item-title class="pl-3">Payroll</v-list-item-title>
           </template>
 
-          <v-list-item v-for="(item, i) in payroll" :key="i" :to="item[1]">
+          <v-list-item :to="{ name: 'employeeList' }">
             <v-icon class="pl-3">mdi-square-small</v-icon>
-            <v-list-item-title
-              class="pl-8"
-              v-text="item[0]"
-            ></v-list-item-title>
+            <v-list-item-title class="pl-8">employeeList</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item :to="{ name: 'runPayroll' }">
+            <v-icon class="pl-3">mdi-square-small</v-icon>
+            <v-list-item-title class="pl-8">runPayroll</v-list-item-title>
           </v-list-item>
         </v-list-group>
 

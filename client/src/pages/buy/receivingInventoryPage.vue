@@ -9,7 +9,8 @@
       <v-card>
         <v-col class="teal lighten-3">
           <h4>
-            <v-icon class="mr-2">mdi-clipboard-text-outline</v-icon>RECEIVING INVENTORY OVERVIEW
+            <v-icon class="mr-2">mdi-clipboard-text-outline</v-icon>RECEIVING
+            INVENTORY OVERVIEW
           </h4>
         </v-col>
         <v-card outlined class="d-flex justify-space-between">
@@ -39,7 +40,9 @@
               <v-list color="grey lighten-5" width="250">
                 <v-list-item>
                   <v-list-item-title>
-                    <v-btn block color="grey lighten-3">Download to excel</v-btn>
+                    <v-btn block color="grey lighten-3"
+                      >Download to excel</v-btn
+                    >
                   </v-list-item-title>
                 </v-list-item>
               </v-list>
@@ -108,10 +111,18 @@
         <v-spacer class="d-flex justify-center">
           <v-card outlined color="transparent" class="mx-5">
             <div class="text-center mt-1">
-              <v-pagination v-model="page" :length="7" :total-visible="4"></v-pagination>
+              <v-pagination
+                v-model="page"
+                :length="7"
+                :total-visible="4"
+              ></v-pagination>
             </div>
           </v-card>
-          <v-card outlined color="transparent" class="mx-5 d-flex justify-space-around">
+          <v-card
+            outlined
+            color="transparent"
+            class="mx-5 d-flex justify-space-around"
+          >
             <h4 class="mt-3">row per page :</h4>
             <v-card outlined class="ml-2" width="100" height="50">
               <v-select :items="allList" label="0" solo></v-select>

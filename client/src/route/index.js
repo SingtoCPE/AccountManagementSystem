@@ -2,7 +2,6 @@ import Vue from "vue";
 import Router from "vue-router";
 
 Vue.use(Router);
-// KuyTok
 export default new Router({
   routes: [
     {
@@ -27,7 +26,18 @@ export default new Router({
           path: "mainpage",
           name: "mainpage",
           component: () => import("@/components/layouts/PrivateLayout.vue"),
+          meta: { requiresAuth: true },
           children: [
+            {
+              path: "mainpage",
+              name: "mainpage",
+              component: () => import("@/pages/mainPage.vue")
+            },
+            {
+              path: "dashboard",
+              name: "dashboard",
+              component: () => import("@/pages/dashboardPage.vue")
+            },
             {
               path: "/sell/invoice",
               name: "invoice",
@@ -47,8 +57,39 @@ export default new Router({
               path: "/buy/purchaseOrder",
               name: "purchaseOrder",
               component: () => import("@/pages/buy/purchaseOrderPage.vue")
+            },
+            {
+              path: "/buy/receivingInventory",
+              name: "receivingInventory",
+              component: () => import("@/pages/buy/receivingInventoryPage.vue")
+            },
+            {
+              path: "/expense",
+              name: "expense",
+              component: () => import("@/pages/expense/expensePage.vue")
+            },
+            {
+              path: "/expense/withholding",
+              name: "withholding",
+              component: () => import("@/pages/expense/withholdingPage.vue")
+            },
+            {
+              path: "/payroll/employeeList",
+              name: "employeeList",
+              component: () => import("@/pages/payroll/employeeListPage.vue")
+            },
+            {
+              path: "/payroll/runPayroll",
+              name: "runPayroll",
+              component: () => import("@/pages/payroll/runPayrollPage.vue")
             }
           ]
+        },
+        {
+          path: "account",
+          name: "account",
+          component: () => import("@/pages/accountPage.vue"),
+          meta: { requiresAuth: true }
         }
       ]
     },
@@ -60,31 +101,6 @@ export default new Router({
       meta: { requiresAuth: true },
       children: [
         {
-          path: "dashboardPage",
-          component: () => import("@/components/pageByMenu/dashboardPage.vue")
-        },
-
-        {
-          path: "expensePage/expensePage",
-          component: () =>
-            import("@/components/pageByMenu/expensePage/expensePage.vue")
-        },
-        {
-          path: "expensePage/withholdingPage",
-          component: () =>
-            import("@/components/pageByMenu/expensePage/withholdingPage.vue")
-        },
-        {
-          path: "payrollPage/runPayrollPage",
-          component: () =>
-            import("@/components/pageByMenu/payrollPage/runPayrollPage.vue")
-        },
-        {
-          path: "payRollPage/employeeListPage",
-          component: () =>
-            import("@/components/pageByMenu/payrollPage/employeeListPage.vue")
-        },
-        {
           path: "reportPage",
           component: () => import("@/components/pageByMenu/reportPage.vue")
         },
@@ -95,11 +111,6 @@ export default new Router({
         {
           path: "contactsPage",
           component: () => import("@/components/pageByMenu/contactsPage.vue")
-        },
-
-        {
-          path: "accountPage",
-          component: () => import("@/components/pageByMenu/accountPage.vue")
         }
       ]
     },

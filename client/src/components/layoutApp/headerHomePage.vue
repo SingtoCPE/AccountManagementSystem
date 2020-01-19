@@ -70,7 +70,7 @@ export default {
       this.clickMenuBar.push("click");
     },
     gotoAccount() {
-      window.location.href = "http://localhost:8080/#/homePage/accountPage";
+      window.location.href = "http://localhost:8080/#/account";
     }
   }
 };

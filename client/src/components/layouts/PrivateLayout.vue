@@ -1,5 +1,5 @@
 <template>
-  <div class="homePage">
+  <div class="PrivateLayout">
     <v-col class="ma-5">
       <header-home-page />
     </v-col>
