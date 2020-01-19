@@ -34,7 +34,7 @@ export const store = new Vuex.Store({
       });
       auth.setToken(data.token);
       if (data.token) {
-        window.location.href = "http://localhost:8080/#/mainPage";
+        window.location.href = "http://localhost:8080/#/home";
         alert(data.resTextSuccess + " Welcome " + data.userFormDB.name);
         // eslint-disable-next-line no-console
         console.log(data.userFormDB.name);

@@ -1,5 +1,5 @@
 <template>
-  <div id="settingPage">
+  <div id="SettingPage">
     <v-card>
       <v-app-bar
         absolute
@@ -81,7 +81,7 @@
 </template>
 <script>
 export default {
-  name: "settingPage",
+  name: "SettingPage",
   components: {},
   data: () => ({
     dataCompony: [

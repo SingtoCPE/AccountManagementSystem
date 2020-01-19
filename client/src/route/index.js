@@ -106,7 +106,7 @@ export default new Router({
       path: "/setting/",
       name: "setting",
       meta: { requiresAuth: true },
-      component: () => import("@/pages/settingPage.vue"),
+      component: () => import("@/pages/SettingPage.vue"),
       children: [
         {
           path: "companyPage",
