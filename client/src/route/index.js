@@ -29,12 +29,12 @@ export default new Router({
           component: () => import("@/pages/mainPage.vue")
         },
         {
-          path: "/buy/purchaseOrder",
+          path: "/buy/purchase-order",
           name: "purchaseOrder",
           component: () => import("@/pages/buy/purchaseOrderPage.vue")
         },
         {
-          path: "/buy/receivingInventory",
+          path: "/buy/receiving-inventory",
           name: "receivingInventory",
           component: () => import("@/pages/buy/receivingInventoryPage.vue")
         },
@@ -49,19 +49,19 @@ export default new Router({
           component: () => import("@/pages/expense/withholdingPage.vue")
         },
         {
-          path: "/payroll/employeeList",
+          path: "/payroll/employee-list",
           name: "employeeList",
           component: () => import("@/pages/payroll/employeeListPage.vue")
         },
         {
-          path: "/payroll/runPayroll",
+          path: "/payroll/run-payroll",
           name: "runPayroll",
           component: () => import("@/pages/payroll/runPayrollPage.vue")
         },
         {
           path: "dashboard",
           name: "dashboard",
-          component: () => import("@/pages/dashboardPage.vue")
+          component: () => import("@/pages/DashboardPage.vue")
         },
 
         {
@@ -70,14 +70,14 @@ export default new Router({
           component: () => import("@/pages/sell/InvoicePage.vue")
         },
         {
-          path: "/sell/billingNote",
+          path: "/sell/billing-note",
           name: "billingNote",
           component: () => import("@/pages/sell/BillingNotePage.vue")
         },
         {
-          path: "/sell/priceQuotation",
+          path: "/sell/price-quotation",
           name: "priceQuotation",
-          component: () => import("@/pages/sell/priceQuotationPage.vue")
+          component: () => import("@/pages/sell/PriceQuotationPage.vue")
         },
         {
           path: "account",
@@ -97,7 +97,7 @@ export default new Router({
         {
           path: "contacts",
           name: "contacts",
-          component: () => import("@/pages/contactsPage.vue")
+          component: () => import("@/pages/ContactsPage.vue")
         }
       ]
     },

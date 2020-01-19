@@ -1,5 +1,5 @@
 <template>
-  <div id="dashboardPage">
+  <div id="DashboardPage">
     <v-card
       class="d-flex flex-wrap justify-space-between"
       color="transparent"
@@ -113,7 +113,7 @@
 </template>
 <script>
 export default {
-  name: "dashboardPage",
+  name: "DashboardPage",
   data: () => ({
     value: [300, 446, 675, 510, 590, 610, 760],
     years: ["30 day", "60 day", "90 day", "180 day", "1 year"],

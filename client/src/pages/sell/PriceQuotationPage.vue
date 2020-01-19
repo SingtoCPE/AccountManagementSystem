@@ -1,5 +1,5 @@
 <template>
-  <div id="priceQuotationPage">
+  <div id="PriceQuotationPage">
     <v-card
       class="d-flex flex-column justify-space-between"
       elevation="2"
@@ -126,7 +126,7 @@
 </template>
 <script>
 export default {
-  name: "priceQuotationPage",
+  name: "PriceQuotationPage",
   data: () => ({
     allList: [1, 2, 3, 4, 5, 6, 7, 8, 9],
     page: 1

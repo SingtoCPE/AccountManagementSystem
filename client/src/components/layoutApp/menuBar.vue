@@ -136,7 +136,7 @@ export default {
   name: "menuBar",
   data: () => ({
     sell: [
-      ["Price Quotation", "/homePage/sellPage/priceQuotationPage"],
+      ["Price Quotation", "/homePage/sellPage/PriceQuotationPage"],
       ["Billing Note", "/homePage/sellPage/BillingNotePage"],
       ["Invoice/Receipt", "/homePage/sellPage/receiptPage"]
     ],
