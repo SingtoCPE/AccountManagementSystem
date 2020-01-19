@@ -72,7 +72,7 @@ export default new Router({
         {
           path: "/sell/billingNote",
           name: "billingNote",
-          component: () => import("@/pages/sell/billingNotePage.vue")
+          component: () => import("@/pages/sell/BillingNotePage.vue")
         },
         {
           path: "/sell/priceQuotation",

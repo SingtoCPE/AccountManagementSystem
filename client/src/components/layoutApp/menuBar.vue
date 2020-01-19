@@ -137,7 +137,7 @@ export default {
   data: () => ({
     sell: [
       ["Price Quotation", "/homePage/sellPage/priceQuotationPage"],
-      ["Billing Note", "/homePage/sellPage/billingNotePage"],
+      ["Billing Note", "/homePage/sellPage/BillingNotePage"],
       ["Invoice/Receipt", "/homePage/sellPage/receiptPage"]
     ],
     buy: [
