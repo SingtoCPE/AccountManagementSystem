@@ -1,5 +1,5 @@
 <template>
-  <div id="withholdingPage">
+  <div id="PurchaseOrderPage">
     <v-card
       class="d-flex flex-column justify-space-between"
       elevation="2"
@@ -9,13 +9,48 @@
       <v-card>
         <v-col class="teal lighten-3">
           <h4>
-            <v-icon class="mr-2">mdi-file-percent-outline</v-icon>WITHHOLDING TAX OVERVIEW
+            <v-icon class="mr-2">mdi-clipboard-text-outline</v-icon>PURCHASE
+            ORDERS OVERVIEW
           </h4>
         </v-col>
-        <v-card height="43" color="white" outlined class="d-flex justify-end mr-2 mt-2">
-          <v-btn color="grey lighten-1" width="115">
-            <v-icon>mdi-plus</v-icon>New
-          </v-btn>
+        <v-card outlined class="d-flex justify-space-between">
+          <v-card outlined color="white">
+            <v-text-field
+              append-icon="mdi-magnify"
+              class="mx-4"
+              flat
+              hide-details
+              label="Search..."
+              solo-inverted
+            ></v-text-field>
+          </v-card>
+          <v-card
+            outlined
+            color="white"
+            width="250"
+            class="pt-2 ml-3 mr-1 d-flex justify-space-around"
+          >
+            <v-menu transition="fade-transition">
+              <template v-slot:activator="{ on }">
+                <v-btn v-on="on">
+                  more...
+                  <v-icon>mdi-chevron-down</v-icon>
+                </v-btn>
+              </template>
+              <v-list color="grey lighten-5" width="250">
+                <v-list-item>
+                  <v-list-item-title>
+                    <v-btn block color="grey lighten-3"
+                      >Download to excel</v-btn
+                    >
+                  </v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
+            <v-btn color="grey lighten-1" width="115">
+              <v-icon>mdi-plus</v-icon>New
+            </v-btn>
+          </v-card>
         </v-card>
 
         <v-card color="grey lighten-3">
@@ -27,11 +62,9 @@
                     <v-checkbox></v-checkbox>
                   </th>
                   <th class="text-left" style="width:120px;">Date</th>
-                  <th class="text-left" style="width:130px;">WT #</th>
+                  <th class="text-left" style="width:130px;">PO #</th>
                   <th class="text-left" style="width:400px;">Supplier Name</th>
-                  <th class="text-left" style="width:120px;">Tax</th>
                   <th class="text-left" style="width:120px;">Total</th>
-                  <th class="text-left" style="width:120px;">Tax withheld</th>
                   <th class="text-left" style="width:160px;">Status</th>
                   <th class="text-left" style="width:120px;">Edit/Print</th>
                 </tr>
@@ -47,7 +80,7 @@
                       prepend-inner-icon="mdi-magnify"
                       flat
                       hide-details
-                      label="WT #"
+                      label="PO #"
                       solo-inverted
                     ></v-text-field>
                   </td>
@@ -61,25 +94,36 @@
                     ></v-text-field>
                   </td>
                   <td>b</td>
+                  <td>
+                    <v-card outlined class="ml-2" width="100" height="50">
+                      <v-select :items="allList" label="All" solo></v-select>
+                    </v-card>
+                  </td>
                   <td>c</td>
-                  <td>d</td>
-                  <td>e</td>
-                  <td>f</td>
                 </tr>
               </tbody>
             </template>
           </v-simple-table>
         </v-card>
       </v-card>
+
       <v-footer color="teal lighten-5">
         <h4>Grand Total</h4>
         <v-spacer class="d-flex justify-center">
           <v-card outlined color="transparent" class="mx-5">
             <div class="text-center mt-1">
-              <v-pagination v-model="page" :length="7" :total-visible="4"></v-pagination>
+              <v-pagination
+                v-model="page"
+                :length="7"
+                :total-visible="4"
+              ></v-pagination>
             </div>
           </v-card>
-          <v-card outlined color="transparent" class="mx-5 d-flex justify-space-around">
+          <v-card
+            outlined
+            color="transparent"
+            class="mx-5 d-flex justify-space-around"
+          >
             <h4 class="mt-3">row per page :</h4>
             <v-card outlined class="ml-2" width="100" height="50">
               <v-select :items="allList" label="0" solo></v-select>
@@ -92,7 +136,7 @@
 </template>
 <script>
 export default {
-  name: "withholdingPage",
+  name: "PurchaseOrderPage",
   data: () => ({
     allList: [1, 2, 3, 4, 5, 6, 7, 8, 9],
     page: 1

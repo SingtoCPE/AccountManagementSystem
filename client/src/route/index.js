@@ -26,37 +26,37 @@ export default new Router({
         {
           path: "home",
           name: "home",
-          component: () => import("@/pages/mainPage.vue")
+          component: () => import("@/pages/MainPage.vue")
         },
         {
           path: "/buy/purchase-order",
           name: "purchaseOrder",
-          component: () => import("@/pages/buy/purchaseOrderPage.vue")
+          component: () => import("@/pages/buy/PurchaseOrderPage.vue")
         },
         {
           path: "/buy/receiving-inventory",
           name: "receivingInventory",
-          component: () => import("@/pages/buy/receivingInventoryPage.vue")
+          component: () => import("@/pages/buy/ReceivingInventoryPage.vue")
         },
         {
           path: "/expense",
           name: "expense",
-          component: () => import("@/pages/expense/expensePage.vue")
+          component: () => import("@/pages/expense/ExpensePage.vue")
         },
         {
           path: "/expense/withholding",
           name: "withholding",
-          component: () => import("@/pages/expense/withholdingPage.vue")
+          component: () => import("@/pages/expense/WithholdingPage.vue")
         },
         {
           path: "/payroll/employee-list",
           name: "employeeList",
-          component: () => import("@/pages/payroll/employeeListPage.vue")
+          component: () => import("@/pages/payroll/EmployeeListPage.vue")
         },
         {
           path: "/payroll/run-payroll",
           name: "runPayroll",
-          component: () => import("@/pages/payroll/runPayrollPage.vue")
+          component: () => import("@/pages/payroll/RunPayrollPage.vue")
         },
         {
           path: "dashboard",
@@ -92,7 +92,7 @@ export default new Router({
         {
           path: "product",
           name: "product",
-          component: () => import("@/pages/productPage.vue")
+          component: () => import("@/pages/ProductPage.vue")
         },
         {
           path: "contacts",
