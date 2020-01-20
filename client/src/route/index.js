@@ -110,63 +110,55 @@ export default new Router({
       children: [
         {
           path: "company",
-          component: () => import("@/components/pageBySetting/CompanyPage.vue")
+          component: () => import("@/pages/setting/CompanyPage.vue")
         },
         {
           path: "logo",
-          component: () => import("@/components/pageBySetting/LogoPage.vue")
+          component: () => import("@/pages/setting/LogoPage.vue")
         },
         {
           path: "stamp",
-          component: () => import("@/components/pageBySetting/StampPage.vue")
+          component: () => import("@/pages/setting/StampPage.vue")
         },
         {
           path: "run-number",
-          component: () =>
-            import("@/components/pageBySetting/RunNumberPage.vue")
+          component: () => import("@/pages/setting/RunNumberPage.vue")
         },
         {
           path: "document-title",
-          component: () =>
-            import("@/components/pageBySetting/DocumentTitlePage.vue")
+          component: () => import("@/pages/setting/DocumentTitlePage.vue")
         },
         {
           path: "document-template",
-          component: () =>
-            import("@/components/pageBySetting/DocumentTemplatePage.vue")
+          component: () => import("@/pages/setting/DocumentTemplatePage.vue")
         },
         {
           path: "document-feature",
-          component: () =>
-            import("@/components/pageBySetting/DocumentFeaturePage.vue")
+          component: () => import("@/pages/setting/DocumentFeaturePage.vue")
         },
         {
           path: "default-remark",
-          component: () =>
-            import("@/components/pageBySetting/DefaultRemarkPage.vue")
+          component: () => import("@/pages/setting/DefaultRemarkPage.vue")
         },
         {
           path: "default-email",
-          component: () =>
-            import("@/components/pageBySetting/DefaultEmailPage.vue")
+          component: () => import("@/pages/setting/DefaultEmailPage.vue")
         },
         {
           path: "other-settings",
-          component: () =>
-            import("@/components/pageBySetting/OtherSettingsPage.vue")
+          component: () => import("@/pages/setting/OtherSettingsPage.vue")
         },
         {
           path: "download",
-          component: () => import("@/components/pageBySetting/DownloadPage.vue")
+          component: () => import("@/pages/setting/DownloadPage.vue")
         },
         {
           path: "signeture",
-          component: () =>
-            import("@/components/pageBySetting/SigneturePage.vue")
+          component: () => import("@/pages/setting/SigneturePage.vue")
         },
         {
           path: "user",
-          component: () => import("@/components/pageBySetting/UserPage.vue")
+          component: () => import("@/pages/setting/UserPage.vue")
         }
       ]
     }
