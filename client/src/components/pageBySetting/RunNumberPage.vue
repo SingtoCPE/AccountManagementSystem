@@ -1,10 +1,10 @@
 <template>
-  <div id="runNumberPage">
+  <div id="RunNumberPage">
     <h1>This is runNumberPage</h1>
   </div>
 </template>
 <script>
 export default {
-  name: "runNumberPage"
+  name: "RunNumberPage"
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div id="MainPage">
+  <div id="HomePage">
     <v-card elevation="2" height="550" width="auto" class="px-4 py-3">
       <v-row justify="center">
         <v-col cols="12" sm="6" class="mb-2 align-center">
@@ -46,7 +46,7 @@
 </template>
 <script>
 export default {
-  name: "MainPage",
+  name: "HomePage",
   data: () => ({
     itemInCard: [
       ["mdi-cash-usd", "Create Price Quotation"],

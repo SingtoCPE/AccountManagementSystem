@@ -26,7 +26,7 @@ export default new Router({
         {
           path: "home",
           name: "home",
-          component: () => import("@/pages/MainPage.vue")
+          component: () => import("@/pages/HomePage.vue")
         },
         {
           path: "/buy/purchase-order",
@@ -110,63 +110,63 @@ export default new Router({
       children: [
         {
           path: "company",
-          component: () => import("@/components/pageBySetting/companyPage.vue")
+          component: () => import("@/components/pageBySetting/CompanyPage.vue")
         },
         {
           path: "logo",
-          component: () => import("@/components/pageBySetting/logoPage.vue")
+          component: () => import("@/components/pageBySetting/LogoPage.vue")
         },
         {
           path: "stamp",
-          component: () => import("@/components/pageBySetting/stampPage.vue")
+          component: () => import("@/components/pageBySetting/StampPage.vue")
         },
         {
           path: "run-number",
           component: () =>
-            import("@/components/pageBySetting/runNumberPage.vue")
+            import("@/components/pageBySetting/RunNumberPage.vue")
         },
         {
           path: "document-title",
           component: () =>
-            import("@/components/pageBySetting/documentTitlePage.vue")
+            import("@/components/pageBySetting/DocumentTitlePage.vue")
         },
         {
           path: "document-template",
           component: () =>
-            import("@/components/pageBySetting/documentTemplatePage.vue")
+            import("@/components/pageBySetting/DocumentTemplatePage.vue")
         },
         {
           path: "document-feature",
           component: () =>
-            import("@/components/pageBySetting/documentFeaturePage.vue")
+            import("@/components/pageBySetting/DocumentFeaturePage.vue")
         },
         {
           path: "default-remark",
           component: () =>
-            import("@/components/pageBySetting/defaultRemarkPage.vue")
+            import("@/components/pageBySetting/DefaultRemarkPage.vue")
         },
         {
           path: "default-email",
           component: () =>
-            import("@/components/pageBySetting/defaultEmailPage.vue")
+            import("@/components/pageBySetting/DefaultEmailPage.vue")
         },
         {
           path: "other-settings",
           component: () =>
-            import("@/components/pageBySetting/otherSettingsPage.vue")
+            import("@/components/pageBySetting/OtherSettingsPage.vue")
         },
         {
           path: "download",
-          component: () => import("@/components/pageBySetting/downloadPage.vue")
+          component: () => import("@/components/pageBySetting/DownloadPage.vue")
         },
         {
           path: "signeture",
           component: () =>
-            import("@/components/pageBySetting/signeturePage.vue")
+            import("@/components/pageBySetting/SigneturePage.vue")
         },
         {
           path: "user",
-          component: () => import("@/components/pageBySetting/userPage.vue")
+          component: () => import("@/components/pageBySetting/UserPage.vue")
         }
       ]
     }

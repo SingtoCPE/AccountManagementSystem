@@ -1,10 +1,10 @@
 <template>
-  <div id="documentTemplatePage">
+  <div id="DocumentTemplatePage">
     <h1>This is documentTemplate</h1>
   </div>
 </template>
 <script>
 export default {
-  name: "documentTemplatePage"
+  name: "DocumentTemplatePage"
 };
 </script>

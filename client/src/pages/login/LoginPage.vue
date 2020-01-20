@@ -1,5 +1,5 @@
 <template>
-  <v-container class="yellow lighten-5 fill-height" fluid>
+  <v-container class="blue-grey lighten-5 fill-height" fluid>
     <v-row align="center" justify="center">
       <v-col cols="12" sm="8" md="4">
         <v-hover v-slot:default="{ hover }">
