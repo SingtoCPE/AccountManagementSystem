@@ -1,5 +1,5 @@
 <template>
-  <div id="headerHomepage">
+  <div id="HeaderLayout">
     <v-app-bar
       absolute
       color="#fcb69f"
@@ -57,7 +57,7 @@
 </template>
 <script>
 export default {
-  name: "headerHomepage",
+  name: "HeaderLayout",
   data: () => ({
     clickMenuBar: []
   }),

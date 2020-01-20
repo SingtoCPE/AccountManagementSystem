@@ -1,5 +1,5 @@
 <template>
-  <div id="menuBar">
+  <div id="MenuBarLayout">
     <v-card elevation="2" class="ma-auto">
       <v-list>
         <v-list-item :to="{ name: 'home' }">
@@ -133,6 +133,6 @@
 
 <script>
 export default {
-  name: "menuBar"
+  name: "MenuBarLayout"
 };
 </script>

@@ -7,7 +7,7 @@
 
 <script>
 import { store } from "./store/store";
-import footerApp from "@/components/layoutApp/footerApp.vue";
+import footerApp from "@/components/layouts/FooterLayout.vue";
 export default {
   name: "App",
   store,

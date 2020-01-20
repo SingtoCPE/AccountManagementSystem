@@ -20,8 +20,8 @@
   </div>
 </template>
 <script>
-import menuBar from "@/components/layoutApp/menuBar.vue";
-import headerHomePage from "@/components/layoutApp/headerHomePage";
+import menuBar from "@/components/layouts/MenuBarLayout.vue";
+import headerHomePage from "@/components/layouts/HeaderLayout.vue";
 import { mapState } from "vuex";
 
 export default {
