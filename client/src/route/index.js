@@ -87,7 +87,7 @@ export default new Router({
         {
           path: "report",
           name: "report",
-          component: () => import("@/pages/reportPage.vue")
+          component: () => import("@/pages/ReportPage.vue")
         },
         {
           path: "product",

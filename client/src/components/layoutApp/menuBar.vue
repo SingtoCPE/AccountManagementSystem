@@ -24,19 +24,19 @@
             <v-list-item-title class="pl-3">Sell</v-list-item-title>
           </template>
 
-          <v-list-item :to="{ name: 'invoice' }">
+          <v-list-item :to="{ name: 'priceQuotation' }">
             <v-icon class="pl-3">mdi-square-small</v-icon>
-            <v-list-item-title class="pl-8">Invoice</v-list-item-title>
+            <v-list-item-title class="pl-8">Price Quotation</v-list-item-title>
           </v-list-item>
 
           <v-list-item :to="{ name: 'billingNote' }">
             <v-icon class="pl-3">mdi-square-small</v-icon>
-            <v-list-item-title class="pl-8">Billing</v-list-item-title>
+            <v-list-item-title class="pl-8">Billing Note</v-list-item-title>
           </v-list-item>
 
-          <v-list-item :to="{ name: 'priceQuotation' }">
+          <v-list-item :to="{ name: 'invoice' }">
             <v-icon class="pl-3">mdi-square-small</v-icon>
-            <v-list-item-title class="pl-8">priceQuotation</v-list-item-title>
+            <v-list-item-title class="pl-8">Invoice/Receipt</v-list-item-title>
           </v-list-item>
         </v-list-group>
 
@@ -50,13 +50,13 @@
 
           <v-list-item :to="{ name: 'purchaseOrder' }">
             <v-icon class="pl-3">mdi-square-small</v-icon>
-            <v-list-item-title class="pl-8">purchaseOrder</v-list-item-title>
+            <v-list-item-title class="pl-8">Purchase Order</v-list-item-title>
           </v-list-item>
 
           <v-list-item :to="{ name: 'receivingInventory' }">
             <v-icon class="pl-3">mdi-square-small</v-icon>
             <v-list-item-title class="pl-8"
-              >receivingInventory</v-list-item-title
+              >Receiving Inventory</v-list-item-title
             >
           </v-list-item>
         </v-list-group>
@@ -76,7 +76,7 @@
 
           <v-list-item :to="{ name: 'withholding' }">
             <v-icon class="pl-3">mdi-square-small</v-icon>
-            <v-list-item-title class="pl-8">withholding</v-list-item-title>
+            <v-list-item-title class="pl-8">Withholding Tax</v-list-item-title>
           </v-list-item>
         </v-list-group>
 
@@ -88,14 +88,14 @@
             <v-list-item-title class="pl-3">Payroll</v-list-item-title>
           </template>
 
-          <v-list-item :to="{ name: 'employeeList' }">
-            <v-icon class="pl-3">mdi-square-small</v-icon>
-            <v-list-item-title class="pl-8">employeeList</v-list-item-title>
-          </v-list-item>
-
           <v-list-item :to="{ name: 'runPayroll' }">
             <v-icon class="pl-3">mdi-square-small</v-icon>
-            <v-list-item-title class="pl-8">runPayroll</v-list-item-title>
+            <v-list-item-title class="pl-8">Run Payroll</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item :to="{ name: 'employeeList' }">
+            <v-icon class="pl-3">mdi-square-small</v-icon>
+            <v-list-item-title class="pl-8">Employee List</v-list-item-title>
           </v-list-item>
         </v-list-group>
 
@@ -133,26 +133,6 @@
 
 <script>
 export default {
-  name: "menuBar",
-  data: () => ({
-    sell: [
-      ["Price Quotation", "/homePage/sellPage/PriceQuotationPage"],
-      ["Billing Note", "/homePage/sellPage/BillingNotePage"],
-      ["Invoice/Receipt", "/homePage/sellPage/receiptPage"]
-    ],
-    buy: [
-      ["Purchase Order", "/homePage/buyPage/purchaseOrderPage"],
-      ["Receiving Inventory", "/homePage/buyPage/receivingInventoryPage"]
-    ],
-    expense: [
-      ["Expense", "/homePage/expensePage/expensePage"],
-      ["Withholding Tax", "/homePage/expensePage/withholdingPage"]
-    ],
-    payroll: [
-      ["Run Payroll", "/homePage/payrollPage/runPayrollPage"],
-      ["Employee List", "/homePage/payrollPage/employeeListPage"]
-    ],
-    justify: ["start", "end"]
-  })
+  name: "menuBar"
 };
 </script>

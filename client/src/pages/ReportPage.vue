@@ -1,5 +1,5 @@
 <template>
-  <div id="reportPage">
+  <div id="ReportPage">
     <v-card elevation="2" height="auto" width="auto">
       <v-col class="teal lighten-3">
         <h4><v-icon class="mr-2">mdi-clipboard-pulse</v-icon>REPORTS</h4>
@@ -95,7 +95,7 @@
 </template>
 <script>
 export default {
-  name: "reportPage",
+  name: "ReportPage",
   data: () => ({
     justify: ["start", "end"],
     align: ["start", "end"],
