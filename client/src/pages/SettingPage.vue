@@ -39,29 +39,114 @@
           width="300px"
         >
           <h3 class="mb-2 ml-4">Company Information</h3>
-          <v-list-item
-            v-for="(item, index) in dataCompony"
-            :key="`${index}-${item}`"
-            :to="item[2]"
-            link
-          >
+
+          <v-list-item :to="{ name: 'company' }" link>
             <v-col class="brown lighten-5 pa-3">
-              <v-icon>{{ item[0] }}</v-icon>
+              <v-icon>mdi-domain</v-icon>
             </v-col>
-            <v-list-item-title class="pl-3">{{ item[1] }}</v-list-item-title>
+            <v-list-item-title class="pl-3"
+              >Edit Company Profile</v-list-item-title
+            >
           </v-list-item>
+
+          <v-list-item :to="{ name: 'logo' }" link>
+            <v-col class="brown lighten-5 pa-3">
+              <v-icon>mdi-heart-outline</v-icon>
+            </v-col>
+            <v-list-item-title class="pl-3">Edit Logo</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item :to="{ name: 'stamp' }" link>
+            <v-col class="brown lighten-5 pa-3">
+              <v-icon>mdi-stamper</v-icon>
+            </v-col>
+            <v-list-item-title class="pl-3">Edit Stamp</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item :to="{ name: 'run-number' }" link>
+            <v-col class="brown lighten-5 pa-3">
+              <v-icon>mdi-counter</v-icon>
+            </v-col>
+            <v-list-item-title class="pl-3"
+              >Edit Running Number</v-list-item-title
+            >
+          </v-list-item>
+
+          <v-list-item :to="{ name: 'document-title' }" link>
+            <v-col class="brown lighten-5 pa-3">
+              <v-icon>mdi-file-document-outline</v-icon>
+            </v-col>
+            <v-list-item-title class="pl-3"
+              >Edit Document Title</v-list-item-title
+            >
+          </v-list-item>
+
+          <v-list-item :to="{ name: 'document-template' }" link>
+            <v-col class="brown lighten-5 pa-3">
+              <v-icon>mdi-file-outline</v-icon>
+            </v-col>
+            <v-list-item-title class="pl-3"
+              >Edit Document Template</v-list-item-title
+            >
+          </v-list-item>
+
+          <v-list-item :to="{ name: 'document-feature' }" link>
+            <v-col class="brown lighten-5 pa-3">
+              <v-icon>mdi-plus-circle</v-icon>
+            </v-col>
+            <v-list-item-title class="pl-3"
+              >Edit Document Features</v-list-item-title
+            >
+          </v-list-item>
+
+          <v-list-item :to="{ name: 'default-remark' }" link>
+            <v-col class="brown lighten-5 pa-3">
+              <v-icon>mdi-comment-outline</v-icon>
+            </v-col>
+            <v-list-item-title class="pl-3"
+              >Edit Default Remark</v-list-item-title
+            >
+          </v-list-item>
+
+          <v-list-item :to="{ name: 'default-email' }" link>
+            <v-col class="brown lighten-5 pa-3">
+              <v-icon>mdi-email</v-icon>
+            </v-col>
+            <v-list-item-title class="pl-3"
+              >Edit Default Email</v-list-item-title
+            >
+          </v-list-item>
+
+          <v-list-item :to="{ name: 'other-settings' }" link>
+            <v-col class="brown lighten-5 pa-3">
+              <v-icon>mdi-dots-horizontal</v-icon>
+            </v-col>
+            <v-list-item-title class="pl-3">Other Settings</v-list-item-title>
+          </v-list-item>
+
+          <v-list-item :to="{ name: 'download' }" link>
+            <v-col class="brown lighten-5 pa-3">
+              <v-icon>mdi-file-document-box-outline</v-icon>
+            </v-col>
+            <v-list-item-title class="pl-3">Download</v-list-item-title>
+          </v-list-item>
+
           <h3 class="mb-2 ml-4 mt-2">User Information</h3>
 
-          <v-list-item
-            v-for="(item, index) in dataUser"
-            :key="`${index}-${item}`"
-            :to="item[2]"
-            link
-          >
+          <v-list-item :to="{ name: 'signeture' }" link>
             <v-col class="brown lighten-5 pa-3">
-              <v-icon>{{ item[0] }}</v-icon>
+              <v-icon>mdi-fountain-pen-tip</v-icon>
             </v-col>
-            <v-list-item-title class="pl-3">{{ item[1] }}</v-list-item-title>
+            <v-list-item-title class="pl-3"
+              >Edit Electronic Signature</v-list-item-title
+            >
+          </v-list-item>
+
+          <v-list-item :to="{ name: 'user' }" link>
+            <v-col class="brown lighten-5 pa-3">
+              <v-icon>mdi-account-edit-outline</v-icon>
+            </v-col>
+            <v-list-item-title class="pl-3">Edit User</v-list-item-title>
           </v-list-item>
         </v-card>
 
@@ -81,42 +166,6 @@
 </template>
 <script>
 export default {
-  name: "SettingPage",
-  components: {},
-  data: () => ({
-    dataCompony: [
-      ["mdi-domain", "Edit Company Profile", "/setting/company"],
-      ["mdi-heart-outline", "Edit Logo", "/setting/logo"],
-      ["mdi-stamper", "Edit Stamp", "/setting/stamp"],
-      ["mdi-counter", "Edit Running Number", "/setting/run-number"],
-      [
-        "mdi-file-document-outline",
-        "Edit Document Title",
-        "/setting/document-title"
-      ],
-      [
-        "mdi-file-outline",
-        "Edit Document Template",
-        "/setting/document-template"
-      ],
-      [
-        "mdi-plus-circle",
-        "Edit Document Features",
-        "/setting/document-feature"
-      ],
-      ["mdi-comment-outline", "Edit Default Remark", "/setting/default-remark"],
-      ["mdi-email", "Edit Default Email", "/setting/default-email"],
-      ["mdi-dots-horizontal", "Other Settings", "/setting/other-settings"],
-      ["mdi-file-document-box-outline", "Download", "/setting/download"]
-    ],
-    dataUser: [
-      [
-        "mdi-fountain-pen-tip",
-        "Edit Electronic Signature",
-        "/setting/signeture"
-      ],
-      ["mdi-account-edit-outline", "Edit User", "/setting/user"]
-    ]
-  })
+  name: "SettingPage"
 };
 </script>
