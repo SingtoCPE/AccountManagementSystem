@@ -109,63 +109,63 @@ export default new Router({
       component: () => import("@/pages/SettingPage.vue"),
       children: [
         {
-          path: "companyPage",
+          path: "company",
           component: () => import("@/components/pageBySetting/companyPage.vue")
         },
         {
-          path: "logoPage",
+          path: "logo",
           component: () => import("@/components/pageBySetting/logoPage.vue")
         },
         {
-          path: "stampPage",
+          path: "stamp",
           component: () => import("@/components/pageBySetting/stampPage.vue")
         },
         {
-          path: "runNumberPage",
+          path: "run-number",
           component: () =>
             import("@/components/pageBySetting/runNumberPage.vue")
         },
         {
-          path: "documentTitlePage",
+          path: "document-title",
           component: () =>
             import("@/components/pageBySetting/documentTitlePage.vue")
         },
         {
-          path: "documentTemplatePage",
+          path: "document-template",
           component: () =>
             import("@/components/pageBySetting/documentTemplatePage.vue")
         },
         {
-          path: "documentFeaturePage",
+          path: "document-feature",
           component: () =>
             import("@/components/pageBySetting/documentFeaturePage.vue")
         },
         {
-          path: "defaultRemarkPage",
+          path: "default-remark",
           component: () =>
             import("@/components/pageBySetting/defaultRemarkPage.vue")
         },
         {
-          path: "defaultEmailPage",
+          path: "default-email",
           component: () =>
             import("@/components/pageBySetting/defaultEmailPage.vue")
         },
         {
-          path: "otherSettingsPage",
+          path: "other-settings",
           component: () =>
             import("@/components/pageBySetting/otherSettingsPage.vue")
         },
         {
-          path: "downloadPage",
+          path: "download",
           component: () => import("@/components/pageBySetting/downloadPage.vue")
         },
         {
-          path: "signeturePage",
+          path: "signeture",
           component: () =>
             import("@/components/pageBySetting/signeturePage.vue")
         },
         {
-          path: "userPage",
+          path: "user",
           component: () => import("@/components/pageBySetting/userPage.vue")
         }
       ]

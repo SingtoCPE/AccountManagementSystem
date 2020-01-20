@@ -85,65 +85,37 @@ export default {
   components: {},
   data: () => ({
     dataCompony: [
-      [
-        "mdi-domain",
-        "Edit Company Profile",
-        "/homePage/settingPage/companyPage"
-      ],
-      ["mdi-heart-outline", "Edit Logo", "/homePage/settingPage/logoPage"],
-      ["mdi-stamper", "Edit Stamp", "/homePage/settingPage/stampPage"],
-      [
-        "mdi-counter",
-        "Edit Running Number",
-        "/homePage/settingPage/runNumberPage"
-      ],
+      ["mdi-domain", "Edit Company Profile", "/setting/company"],
+      ["mdi-heart-outline", "Edit Logo", "/setting/logo"],
+      ["mdi-stamper", "Edit Stamp", "/setting/stamp"],
+      ["mdi-counter", "Edit Running Number", "/setting/run-number"],
       [
         "mdi-file-document-outline",
         "Edit Document Title",
-        "/homePage/settingPage/documentTitlePage"
+        "/setting/document-title"
       ],
       [
         "mdi-file-outline",
         "Edit Document Template",
-        "/homePage/settingPage/documentTemplatePage"
+        "/setting/document-template"
       ],
       [
         "mdi-plus-circle",
         "Edit Document Features",
-        "/homePage/settingPage/documentFeaturePage"
+        "/setting/document-feature"
       ],
-      [
-        "mdi-comment-outline",
-        "Edit Default Remark",
-        "/homePage/settingPage/defaultRemarkPage"
-      ],
-      [
-        "mdi-email",
-        "Edit Default Email",
-        "/homePage/settingPage/defaultEmailPage"
-      ],
-      [
-        "mdi-dots-horizontal",
-        "Other Settings",
-        "/homePage/settingPage/otherSettingsPage"
-      ],
-      [
-        "mdi-file-document-box-outline",
-        "Download",
-        "/homePage/settingPage/downloadPage"
-      ]
+      ["mdi-comment-outline", "Edit Default Remark", "/setting/default-remark"],
+      ["mdi-email", "Edit Default Email", "/setting/default-email"],
+      ["mdi-dots-horizontal", "Other Settings", "/setting/other-settings"],
+      ["mdi-file-document-box-outline", "Download", "/setting/download"]
     ],
     dataUser: [
       [
         "mdi-fountain-pen-tip",
         "Edit Electronic Signature",
-        "/homePage/settingPage/signeturePage"
+        "/setting/signeture"
       ],
-      [
-        "mdi-account-edit-outline",
-        "Edit User",
-        "/homePage/settingPage/userPage"
-      ]
+      ["mdi-account-edit-outline", "Edit User", "/setting/user"]
     ]
   })
 };
