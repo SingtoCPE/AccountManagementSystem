@@ -97,8 +97,6 @@
 export default {
   name: "ReportPage",
   data: () => ({
-    justify: ["start", "end"],
-    align: ["start", "end"],
     itemInSell: [
       [
         "Sales",
