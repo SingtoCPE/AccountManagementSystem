@@ -24,12 +24,12 @@
             <v-list-item-title class="pl-3">Sell</v-list-item-title>
           </template>
 
-          <v-list-item :to="{ name: 'priceQuotation' }">
+          <v-list-item :to="{ name: 'price-quotation' }">
             <v-icon class="pl-3">mdi-square-small</v-icon>
             <v-list-item-title class="pl-8">Price Quotation</v-list-item-title>
           </v-list-item>
 
-          <v-list-item :to="{ name: 'billingNote' }">
+          <v-list-item :to="{ name: 'billing-note' }">
             <v-icon class="pl-3">mdi-square-small</v-icon>
             <v-list-item-title class="pl-8">Billing Note</v-list-item-title>
           </v-list-item>
@@ -48,12 +48,12 @@
             <v-list-item-title class="pl-3">Buy</v-list-item-title>
           </template>
 
-          <v-list-item :to="{ name: 'purchaseOrder' }">
+          <v-list-item :to="{ name: 'purchase-order' }">
             <v-icon class="pl-3">mdi-square-small</v-icon>
             <v-list-item-title class="pl-8">Purchase Order</v-list-item-title>
           </v-list-item>
 
-          <v-list-item :to="{ name: 'receivingInventory' }">
+          <v-list-item :to="{ name: 'receiving-inventory' }">
             <v-icon class="pl-3">mdi-square-small</v-icon>
             <v-list-item-title class="pl-8"
               >Receiving Inventory</v-list-item-title
@@ -88,12 +88,12 @@
             <v-list-item-title class="pl-3">Payroll</v-list-item-title>
           </template>
 
-          <v-list-item :to="{ name: 'runPayroll' }">
+          <v-list-item :to="{ name: 'run-payroll' }">
             <v-icon class="pl-3">mdi-square-small</v-icon>
             <v-list-item-title class="pl-8">Run Payroll</v-list-item-title>
           </v-list-item>
 
-          <v-list-item :to="{ name: 'employeeList' }">
+          <v-list-item :to="{ name: 'employee-list' }">
             <v-icon class="pl-3">mdi-square-small</v-icon>
             <v-list-item-title class="pl-8">Employee List</v-list-item-title>
           </v-list-item>

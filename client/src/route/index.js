@@ -30,12 +30,12 @@ export default new Router({
         },
         {
           path: "/buy/purchase-order",
-          name: "purchaseOrder",
+          name: "purchase-order",
           component: () => import("@/pages/buy/PurchaseOrderPage.vue")
         },
         {
           path: "/buy/receiving-inventory",
-          name: "receivingInventory",
+          name: "receiving-inventory",
           component: () => import("@/pages/buy/ReceivingInventoryPage.vue")
         },
         {
@@ -50,12 +50,12 @@ export default new Router({
         },
         {
           path: "/payroll/employee-list",
-          name: "employeeList",
+          name: "employee-list",
           component: () => import("@/pages/payroll/EmployeeListPage.vue")
         },
         {
           path: "/payroll/run-payroll",
-          name: "runPayroll",
+          name: "run-payroll",
           component: () => import("@/pages/payroll/RunPayrollPage.vue")
         },
         {
@@ -71,12 +71,12 @@ export default new Router({
         },
         {
           path: "/sell/billing-note",
-          name: "billingNote",
+          name: "billing-note",
           component: () => import("@/pages/sell/BillingNotePage.vue")
         },
         {
           path: "/sell/price-quotation",
-          name: "priceQuotation",
+          name: "price-quotation",
           component: () => import("@/pages/sell/PriceQuotationPage.vue")
         },
         {
@@ -110,54 +110,67 @@ export default new Router({
       children: [
         {
           path: "company",
+          name: "company",
           component: () => import("@/pages/setting/CompanyPage.vue")
         },
         {
           path: "logo",
+          name: "logo",
           component: () => import("@/pages/setting/LogoPage.vue")
         },
         {
           path: "stamp",
+          name: "stamp",
           component: () => import("@/pages/setting/StampPage.vue")
         },
         {
           path: "run-number",
+          name: "run-number",
           component: () => import("@/pages/setting/RunNumberPage.vue")
         },
         {
           path: "document-title",
+          name: "document-title",
           component: () => import("@/pages/setting/DocumentTitlePage.vue")
         },
         {
           path: "document-template",
+          name: "document-template",
           component: () => import("@/pages/setting/DocumentTemplatePage.vue")
         },
         {
           path: "document-feature",
+          name: "document-feature",
           component: () => import("@/pages/setting/DocumentFeaturePage.vue")
         },
         {
           path: "default-remark",
+          name: "default-remark",
           component: () => import("@/pages/setting/DefaultRemarkPage.vue")
         },
         {
           path: "default-email",
+          name: "default-email",
           component: () => import("@/pages/setting/DefaultEmailPage.vue")
         },
         {
           path: "other-settings",
+          name: "other-settings",
           component: () => import("@/pages/setting/OtherSettingsPage.vue")
         },
         {
           path: "download",
+          name: "download",
           component: () => import("@/pages/setting/DownloadPage.vue")
         },
         {
           path: "signeture",
+          name: "signeture",
           component: () => import("@/pages/setting/SigneturePage.vue")
         },
         {
           path: "user",
+          name: "user",
           component: () => import("@/pages/setting/UserPage.vue")
         }
       ]
