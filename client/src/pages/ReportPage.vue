@@ -10,31 +10,31 @@
         <v-tab>Product</v-tab>
 
         <v-tab-item>
-          <v-card class="d-flex flex-wrap justify-center mt-6 " flat tile>
-            <v-card
-              v-for="(item, index) in itemInSell"
-              :key="index"
-              width="335"
-              height="215"
-              class="pa-2 ma-1"
-              outlined
-              tile
-            >
-              <v-card
-                class="pa-4 mb-2 text-start"
-                height="150"
-                outlined
-                color="white"
-              >
-                <h3>{{ item[0] }}</h3>
-                <h3>{{ item[1] }}</h3>
-              </v-card>
-              <v-card flat color="white" class="text-start ml-5">
-                <v-btn @click="clickViewAll(index)" color="teal lighten-3"
-                  >VIEW REPORT {{ index }}</v-btn
+          <v-card elevation="0">
+            <v-container>
+              <v-row>
+                <v-col
+                  v-for="(item, index) in itemInSell"
+                  :key="index"
+                  cols="12"
+                  md="3"
                 >
-              </v-card>
-            </v-card>
+                  <v-card outlined height="200">
+                    <v-card-title>
+                      {{ item[0] }}
+                    </v-card-title>
+                    <v-card-text class="content-item">
+                      {{ item[1] }}
+                    </v-card-text>
+                    <v-card-actions class="d-flex flex-wrap align-end">
+                      <v-btn @click="clickViewAll(index)" color="teal lighten-3"
+                        >VIEW REPORT {{ index }}
+                      </v-btn>
+                    </v-card-actions>
+                  </v-card>
+                </v-col>
+              </v-row>
+            </v-container>
           </v-card>
         </v-tab-item>
 
@@ -132,9 +132,9 @@ export default {
     ]
   }),
   methods: {
-    crossCheckAllSell(j, index) {
+    crossCheckAllSell(index) {
       // eslint-disable-next-line no-console
-      console.log(j, index);
+      console.log(index);
       //if(j==start && index = 0){ Do somethings }
     },
 
@@ -145,7 +145,16 @@ export default {
     crossCheckAllProduct() {
       // eslint-disable-next-line no-console
       console.log("product");
+    },
+    clickViewAll(index) {
+      // eslint-disable-next-line no-console
+      console.log(index);
     }
   }
 };
 </script>
+<style scoped>
+.content-item {
+  height: 70px;
+}
+</style>
