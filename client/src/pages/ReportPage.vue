@@ -26,7 +26,7 @@
                   v-for="(item, index) in itemInSell"
                 >
                   <v-card
-                    height="200"
+                    height="225"
                     outlined
                   >
                     <v-card-title>{{ item[0] }}</v-card-title>
@@ -45,38 +45,31 @@
         </v-tab-item>
 
         <v-tab-item>
-          <v-card
-            class="d-flex flex-wrap justify-start mt-6"
-            flat
-          >
-            <v-card
-              :key="index"
-              class="pa-2 ma-1"
-              height="215"
-              outlined
-              v-for="(item, index) in itemInBuy"
-              width="335"
-            >
-              <v-card
-                class="pa-4 mb-2 text-start"
-                color="white"
-                height="150"
-                outlined
-              >
-                <h3>{{ item[0] }}</h3>
-                <h3>{{ item[1] }}</h3>
-              </v-card>
-              <v-card
-                class="text-start ml-5"
-                color="white"
-                flat
-              >
-                <v-btn
-                  @click="clickViewAll(index)"
-                  color="teal lighten-3"
-                >VIEW REPORT {{ index }}</v-btn>
-              </v-card>
-            </v-card>
+          <v-card elevation="0">
+            <v-container>
+              <v-row>
+                <v-col
+                  :key="index"
+                  cols="12"
+                  md="3"
+                  v-for="(item, index) in itemInBuy"
+                >
+                  <v-card
+                    height="225"
+                    outlined
+                  >
+                    <v-card-title>{{ item[0] }}</v-card-title>
+                    <v-card-text class="content-item">{{ item[1] }}</v-card-text>
+                    <v-card-actions class="d-flex flex-wrap align-end">
+                      <v-btn
+                        @click="clickViewAll(index)"
+                        color="teal lighten-3"
+                      >VIEW REPORT {{ index }}</v-btn>
+                    </v-card-actions>
+                  </v-card>
+                </v-col>
+              </v-row>
+            </v-container>
           </v-card>
         </v-tab-item>
 
@@ -186,6 +179,6 @@ export default {
 </script>
 <style scoped>
 .content-item {
-  height: 70px;
+  height: 95px;
 }
 </style>
