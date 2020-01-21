@@ -1,8 +1,14 @@
 <template>
   <div id="ReportPage">
-    <v-card elevation="2" height="auto" width="auto">
+    <v-card
+      elevation="2"
+      height="auto"
+      width="auto"
+    >
       <v-col class="teal lighten-3">
-        <h4><v-icon class="mr-2">mdi-clipboard-pulse</v-icon>REPORTS</h4>
+        <h4>
+          <v-icon class="mr-2">mdi-clipboard-pulse</v-icon>REPORTS
+        </h4>
       </v-col>
       <v-tabs class="pa-7">
         <v-tab>Sell</v-tab>
@@ -14,22 +20,22 @@
             <v-container>
               <v-row>
                 <v-col
-                  v-for="(item, index) in itemInSell"
                   :key="index"
                   cols="12"
                   md="3"
+                  v-for="(item, index) in itemInSell"
                 >
-                  <v-card outlined height="200">
-                    <v-card-title>
-                      {{ item[0] }}
-                    </v-card-title>
-                    <v-card-text class="content-item">
-                      {{ item[1] }}
-                    </v-card-text>
+                  <v-card
+                    height="200"
+                    outlined
+                  >
+                    <v-card-title>{{ item[0] }}</v-card-title>
+                    <v-card-text class="content-item">{{ item[1] }}</v-card-text>
                     <v-card-actions class="d-flex flex-wrap align-end">
-                      <v-btn @click="clickViewAll(index)" color="teal lighten-3"
-                        >VIEW REPORT {{ index }}
-                      </v-btn>
+                      <v-btn
+                        @click="clickViewAll(index)"
+                        color="teal lighten-3"
+                      >VIEW REPORT {{ index }}</v-btn>
                     </v-card-actions>
                   </v-card>
                 </v-col>
@@ -39,52 +45,77 @@
         </v-tab-item>
 
         <v-tab-item>
-          <v-card class="d-flex flex-wrap justify-start mt-6" flat tile>
+          <v-card
+            class="d-flex flex-wrap justify-start mt-6"
+            flat
+          >
             <v-card
-              v-for="(item, index) in itemInBuy"
               :key="index"
-              width="335"
-              height="215"
               class="pa-2 ma-1"
+              height="215"
               outlined
-              tile
+              v-for="(item, index) in itemInBuy"
+              width="335"
             >
               <v-card
                 class="pa-4 mb-2 text-start"
+                color="white"
                 height="150"
                 outlined
-                color="white"
               >
                 <h3>{{ item[0] }}</h3>
                 <h3>{{ item[1] }}</h3>
               </v-card>
-              <v-card flat color="white" class="text-start ml-5">
-                <v-btn @click="clickViewAll(index)" color="teal lighten-3"
-                  >VIEW REPORT {{ index }}</v-btn
-                >
+              <v-card
+                class="text-start ml-5"
+                color="white"
+                flat
+              >
+                <v-btn
+                  @click="clickViewAll(index)"
+                  color="teal lighten-3"
+                >VIEW REPORT {{ index }}</v-btn>
               </v-card>
             </v-card>
           </v-card>
         </v-tab-item>
 
         <v-tab-item>
-          <v-card class="d-flex flex-wrap justify-start mt-6" flat tile>
-            <v-card width="335" height="215" class="pa-2 ma-1" outlined tile>
+          <v-card
+            class="d-flex flex-wrap justify-start mt-6"
+            flat
+          >
+            <v-card
+              class="pa-2 ma-1"
+              height="215"
+              outlined
+              tile
+              width="335"
+            >
               <v-card
                 class="pa-4 mb-2 text-start"
+                color="white"
                 height="150"
                 outlined
-                color="white"
               >
                 <h3>Products</h3>
-                <v-card outlined color="white" height="80">
+                <v-card
+                  color="white"
+                  height="80"
+                  outlined
+                >
                   <h4>View Sales revenue by product or service.</h4>
                 </v-card>
               </v-card>
-              <v-card flat color="white" class="text-start ml-5">
-                <v-btn @click="crossCheckAllProduct" color="teal lighten-3"
-                  >VIEW REPORT</v-btn
-                >
+              <v-card
+                class="text-start ml-5"
+                color="white"
+                flat
+              >
+                <v-btn
+                  @click="crossCheckAllProduct"
+                  color="teal lighten-3"
+                >VIEW REPORT</v-btn>
               </v-card>
             </v-card>
           </v-card>
